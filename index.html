@@ -664,6 +664,48 @@
       margin-bottom: 14px;
     }
 
+    .record-view-control {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .record-view-control span {
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.68);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .record-select {
+      min-width: 230px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 10px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      padding: 9px 10px;
+      outline: none;
+    }
+
+    .record-select option {
+      background: #0b1220;
+      color: #ffffff;
+    }
+
+    .record-diff-note {
+      font-size: 12px;
+      line-height: 1.45;
+      color: rgba(255,255,255,0.74);
+      white-space: normal;
+    }
+
     .record-table-wrap {
       overflow-x: auto;
       border-radius: 14px;
@@ -985,8 +1027,14 @@
         <div class="admin-dashboard-title">Admin Records Dashboard</div>
 
         <div class="record-actions">
-          <button class="update-btn" onclick="saveDailyRecord()">Update Record</button>
+          <button class="update-btn" onclick="saveDailyRecord()">Save Today Record</button>
           <button class="fetch-btn" onclick="renderRecordsDashboard()">Refresh Dashboard</button>
+          <div class="record-view-control">
+            <span>View Date</span>
+            <select class="record-select" id="record-date-select" onchange="renderRecordsDashboard(this.value)">
+              <option value="">Latest Saved Date</option>
+            </select>
+          </div>
           <button class="pdf-btn" onclick="clearDailyRecords()">Clear Records</button>
         </div>
 
@@ -997,9 +1045,10 @@
             <thead>
               <tr>
                 <th>Symbol</th>
-<th>Today Close</th>
-<th>Previous Targets / SL</th>
-<th>Status</th>
+                <th>Selected Close</th>
+                <th>Previous Targets / SL</th>
+                <th>Status</th>
+                <th>Price Difference</th>
               </tr>
             </thead>
             <tbody id="record-dashboard-body"></tbody>
@@ -1013,9 +1062,7 @@
       <button class="add-row-btn" onclick="addStockRow()">+ Add Stock Row</button>
 
       <div style="display:flex;align-items:center;">
-        <button class="update-btn" onclick="updateReport()">Update Report</button>
-        <button class="update-btn" onclick="saveDailyRecord()" style="margin-left:10px;">Update Record</button>
-        <span class="saved-toast" id="saved-toast">✓ Report updated!</span>
+        <span class="saved-toast" id="saved-toast">✓ Saved!</span>
       </div>
     </div>
 
@@ -1481,6 +1528,21 @@
       return Number.isFinite(num) ? num : null;
     }
 
+    function formatSignedNumber(value) {
+      if (value === null || !Number.isFinite(value)) return '-';
+      const abs = Math.abs(value).toLocaleString('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+      if (value > 0) return '+' + abs;
+      if (value < 0) return '-' + abs;
+      return '0.00';
+    }
+
+    function getRecordKey(record) {
+      return record.dateInput || record.date || String(record.id || '');
+    }
+
     function getCurrentRecordFromForm() {
       const recordDate = formatDateDisplay(document.getElementById('in-date').value);
       const record = {
@@ -1532,7 +1594,7 @@
       toast.classList.add('show');
       setTimeout(() => {
         toast.classList.remove('show');
-        toast.textContent = '✓ Report updated!';
+        toast.textContent = '✓ Saved!';
       }, 2500);
     }
 
@@ -1541,7 +1603,7 @@
       const newRecord = getCurrentRecordFromForm();
       let records = loadRecords();
 
-      const existingIndex = records.findIndex(r => r.date === newRecord.date);
+      const existingIndex = records.findIndex(r => getRecordKey(r) === getRecordKey(newRecord));
       if (existingIndex >= 0) records[existingIndex] = newRecord;
       else records.push(newRecord);
 
@@ -1552,8 +1614,8 @@
       });
 
       saveRecords(records);
-      renderRecordsDashboard();
-      showRecordToast('✓ Record saved!');
+      renderRecordsDashboard(getRecordKey(newRecord));
+      showRecordToast('✓ Today record saved!');
     }
 
     function clearDailyRecords() {
@@ -1601,10 +1663,47 @@
       `;
     }
 
-function addTargetTrackingRow(label, todayClose, prevT1, prevT2, prevSL) {
-  const tbody = document.getElementById('record-dashboard-body');
+function populateRecordDateSelect(selectedKey = '') {
+  const select = document.getElementById('record-date-select');
+  if (!select) return;
 
-  const close = cleanNumber(todayClose);
+  const records = loadRecords();
+  const currentValue = selectedKey || select.value;
+
+  select.innerHTML = '<option value="">Latest Saved Date</option>';
+  records.slice().reverse().forEach(record => {
+    const key = getRecordKey(record);
+    const option = document.createElement('option');
+    option.value = key;
+    option.textContent = record.date;
+    if (key === currentValue) option.selected = true;
+    select.appendChild(option);
+  });
+}
+
+function buildPriceDifferenceText(status, close, t1, t2, sl) {
+  if (close === null) return '-';
+
+  if (status === 'Target 2 Hit') {
+    return '<div class="record-diff-note">Above T2: ' + formatSignedNumber(close - t2) + '</div>';
+  }
+
+  if (status === 'Target 1 Hit') {
+    return '<div class="record-diff-note">Above T1: ' + formatSignedNumber(close - t1) + '<br>To T2: ' + formatSignedNumber(close - t2) + '</div>';
+  }
+
+  if (status === 'Stoploss Hit') {
+    return '<div class="record-diff-note">Below SL: ' + formatSignedNumber(close - sl) + '</div>';
+  }
+
+  return '<div class="record-diff-note">To T1: ' + formatSignedNumber(close - t1) + '<br>Above SL: ' + formatSignedNumber(close - sl) + '</div>';
+}
+
+function addTargetTrackingRow(label, selectedClose, prevT1, prevT2, prevSL) {
+  const tbody = document.getElementById('record-dashboard-body');
+  if (!tbody) return;
+
+  const close = cleanNumber(selectedClose);
   const t1 = cleanNumber(prevT1);
   const t2 = cleanNumber(prevT2);
   const sl = cleanNumber(prevSL);
@@ -1612,7 +1711,9 @@ function addTargetTrackingRow(label, todayClose, prevT1, prevT2, prevSL) {
   let status = 'Neutral';
   let statusClass = 'record-flat';
 
-  if (close >= t2) {
+  if (close === null || t1 === null || t2 === null || sl === null) {
+    status = 'Missing Data';
+  } else if (close >= t2) {
     status = 'Target 2 Hit';
     statusClass = 'record-up';
   } else if (close >= t1) {
@@ -1626,23 +1727,28 @@ function addTargetTrackingRow(label, todayClose, prevT1, prevT2, prevSL) {
     statusClass = 'record-flat';
   }
 
-  const progressToT1 = t1 ? ((close / t1) * 100).toFixed(1) + '%' : '-';
+  const progressToT1 = close !== null && t1 ? ((close / t1) * 100).toFixed(1) + '%' : '-';
+  const diffText = buildPriceDifferenceText(status, close, t1, t2, sl);
 
   tbody.innerHTML += `
     <tr>
       <td>${label}</td>
-      <td>Close: ${todayClose || '-'}</td>
+      <td>Close: ${selectedClose || '-'}</td>
       <td>T1: ${prevT1 || '-'} | T2: ${prevT2 || '-'} | SL: ${prevSL || '-'}</td>
       <td class="${statusClass}">${status} (${progressToT1})</td>
+      <td>${diffText}</td>
     </tr>
   `;
 }
     
-    function renderRecordsDashboard() {
+function renderRecordsDashboard(selectedKey = '') {
   const records = loadRecords();
   const summary = document.getElementById('record-summary');
   const tbody = document.getElementById('record-dashboard-body');
 
+  if (!summary || !tbody) return;
+
+  populateRecordDateSelect(selectedKey);
   tbody.innerHTML = '';
 
   if (records.length === 0) {
@@ -1651,33 +1757,46 @@ function addTargetTrackingRow(label, todayClose, prevT1, prevT2, prevSL) {
   }
 
   if (records.length === 1) {
-    summary.textContent = `1 record saved for ${records[0].date}. Save another day to compare today’s close with previous targets.`;
+    summary.textContent = `1 record saved for ${records[0].date}. Save another day to compare selected close with previous targets.`;
     return;
   }
 
-  const previous = records[records.length - 2];
-  const latest = records[records.length - 1];
+  const keyToUse = selectedKey || document.getElementById('record-date-select')?.value || getRecordKey(records[records.length - 1]);
+  let latestIndex = records.findIndex(r => getRecordKey(r) === keyToUse);
+  if (latestIndex < 0) latestIndex = records.length - 1;
 
-  summary.textContent = `Tracking ${latest.date} closing against ${previous.date} targets and stoploss`;
+  if (latestIndex === 0) {
+    const first = records[0];
+    summary.textContent = `${first.date} is the first saved record. No previous date available for target tracking.`;
+    return;
+  }
+
+  const previous = records[latestIndex - 1];
+  const selected = records[latestIndex];
+
+  const select = document.getElementById('record-date-select');
+  if (select) select.value = getRecordKey(selected);
+
+  summary.textContent = `Tracking ${selected.date} closing against ${previous.date} targets and stoploss`;
 
   addTargetTrackingRow(
     'KSE100',
-    latest.kse100.closing,
+    selected.kse100.closing,
     previous.kse100.target1,
     previous.kse100.target2,
     previous.kse100.stoploss
   );
 
-  latest.stocks.forEach(latestStock => {
+  selected.stocks.forEach(selectedStock => {
     const previousStock = previous.stocks.find(
-      s => s.symbol === latestStock.symbol
+      s => s.symbol === selectedStock.symbol
     );
 
     if (!previousStock) return;
 
     addTargetTrackingRow(
-      latestStock.symbol,
-      latestStock.close,
+      selectedStock.symbol,
+      selectedStock.close,
       previousStock.target1,
       previousStock.target2,
       previousStock.stoploss
