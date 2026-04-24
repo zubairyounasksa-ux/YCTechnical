@@ -996,12 +996,10 @@
           <table class="record-table">
             <thead>
               <tr>
-                <th>Item</th>
-                <th>Previous Date</th>
-                <th>Previous</th>
-                <th>Latest Date</th>
-                <th>Latest</th>
-                <th>Change</th>
+                <th>Symbol</th>
+<th>Today Close</th>
+<th>Previous Targets / SL</th>
+<th>Status</th>
               </tr>
             </thead>
             <tbody id="record-dashboard-body"></tbody>
@@ -1603,56 +1601,89 @@
       `;
     }
 
+function addTargetTrackingRow(label, todayClose, prevT1, prevT2, prevSL) {
+  const tbody = document.getElementById('record-dashboard-body');
+
+  const close = cleanNumber(todayClose);
+  const t1 = cleanNumber(prevT1);
+  const t2 = cleanNumber(prevT2);
+  const sl = cleanNumber(prevSL);
+
+  let status = 'Neutral';
+  let statusClass = 'record-flat';
+
+  if (close >= t2) {
+    status = 'Target 2 Hit';
+    statusClass = 'record-up';
+  } else if (close >= t1) {
+    status = 'Target 1 Hit';
+    statusClass = 'record-up';
+  } else if (close <= sl) {
+    status = 'Stoploss Hit';
+    statusClass = 'record-down';
+  } else {
+    status = 'In Range';
+    statusClass = 'record-flat';
+  }
+
+  const progressToT1 = t1 ? ((close / t1) * 100).toFixed(1) + '%' : '-';
+
+  tbody.innerHTML += `
+    <tr>
+      <td>${label}</td>
+      <td>Close: ${todayClose || '-'}</td>
+      <td>T1: ${prevT1 || '-'} | T2: ${prevT2 || '-'} | SL: ${prevSL || '-'}</td>
+      <td class="${statusClass}">${status} (${progressToT1})</td>
+    </tr>
+  `;
+}
+    
     function renderRecordsDashboard() {
-      const records = loadRecords();
-      const summary = document.getElementById('record-summary');
-      const tbody = document.getElementById('record-dashboard-body');
+  const records = loadRecords();
+  const summary = document.getElementById('record-summary');
+  const tbody = document.getElementById('record-dashboard-body');
 
-      if (!summary || !tbody) return;
-      tbody.innerHTML = '';
+  tbody.innerHTML = '';
 
-      if (records.length === 0) {
-        summary.textContent = 'No records saved yet. Press Update Record to save today’s report data.';
-        return;
-      }
+  if (records.length === 0) {
+    summary.textContent = 'No records saved yet.';
+    return;
+  }
 
-      if (records.length === 1) {
-        summary.textContent = `1 record saved for ${records[0].date}. Save another date to compare daily progress.`;
-        addDashboardRow('KSE100 Closing', '-', '-', records[0].date, records[0].kse100.closing);
-        addDashboardRow('KSE100 Target 1', '-', '-', records[0].date, records[0].kse100.target1);
-        addDashboardRow('KSE100 Target 2', '-', '-', records[0].date, records[0].kse100.target2);
-        addDashboardRow('KSE100 Stoploss', '-', '-', records[0].date, records[0].kse100.stoploss);
-        records[0].stocks.forEach(stock => addDashboardRow(`${stock.symbol} Close`, '-', '-', records[0].date, stock.close));
-        return;
-      }
+  if (records.length === 1) {
+    summary.textContent = `1 record saved for ${records[0].date}. Save another day to compare today’s close with previous targets.`;
+    return;
+  }
 
-      const previous = records[records.length - 2];
-      const latest = records[records.length - 1];
+  const previous = records[records.length - 2];
+  const latest = records[records.length - 1];
 
-      summary.textContent = `Saved records: ${records.length}. Comparing latest date ${latest.date} with previous date ${previous.date}.`;
+  summary.textContent = `Tracking ${latest.date} closing against ${previous.date} targets and stoploss`;
 
-      addDashboardRow('KSE100 Closing', previous.date, previous.kse100.closing, latest.date, latest.kse100.closing);
-      addDashboardRow('KSE100 Target 1', previous.date, previous.kse100.target1, latest.date, latest.kse100.target1);
-      addDashboardRow('KSE100 Target 2', previous.date, previous.kse100.target2, latest.date, latest.kse100.target2);
-      addDashboardRow('KSE100 Stoploss', previous.date, previous.kse100.stoploss, latest.date, latest.kse100.stoploss);
+  addTargetTrackingRow(
+    'KSE100',
+    latest.kse100.closing,
+    previous.kse100.target1,
+    previous.kse100.target2,
+    previous.kse100.stoploss
+  );
 
-      latest.stocks.forEach(latestStock => {
-        const previousStock = previous.stocks.find(s => s.symbol === latestStock.symbol);
+  latest.stocks.forEach(latestStock => {
+    const previousStock = previous.stocks.find(
+      s => s.symbol === latestStock.symbol
+    );
 
-        if (!previousStock) {
-          addDashboardRow(`${latestStock.symbol} Close`, '-', '-', latest.date, latestStock.close);
-          addDashboardRow(`${latestStock.symbol} Target 1`, '-', '-', latest.date, latestStock.target1);
-          addDashboardRow(`${latestStock.symbol} Target 2`, '-', '-', latest.date, latestStock.target2);
-          addDashboardRow(`${latestStock.symbol} Stoploss`, '-', '-', latest.date, latestStock.stoploss);
-          return;
-        }
+    if (!previousStock) return;
 
-        addDashboardRow(`${latestStock.symbol} Close`, previous.date, previousStock.close, latest.date, latestStock.close);
-        addDashboardRow(`${latestStock.symbol} Target 1`, previous.date, previousStock.target1, latest.date, latestStock.target1);
-        addDashboardRow(`${latestStock.symbol} Target 2`, previous.date, previousStock.target2, latest.date, latestStock.target2);
-        addDashboardRow(`${latestStock.symbol} Stoploss`, previous.date, previousStock.stoploss, latest.date, latestStock.stoploss);
-      });
-    }
+    addTargetTrackingRow(
+      latestStock.symbol,
+      latestStock.close,
+      previousStock.target1,
+      previousStock.target2,
+      previousStock.stoploss
+    );
+  });
+}
 
 
     document.getElementById('in-date').addEventListener('change', function () {
