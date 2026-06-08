@@ -23,23 +23,152 @@
       --blue-soft: rgba(91, 136, 255, 0.14);
       --shadow-lg: 0 24px 70px rgba(0,0,0,0.38);
       --shadow-md: 0 12px 34px rgba(0,0,0,0.24);
+      --bg-color-1: rgba(91,136,255,0.08);
+      --bg-color-2: rgba(102,200,138,0.06);
+      --bg-start: #04070d;
+      --bg-end: #08101b;
+
+      /* Report card mode tokens (dark by default) */
+      --card-bg-overlay-1: rgba(6,11,23,0.84);
+      --card-bg-overlay-2: rgba(6,11,23,0.92);
+      --card-header-bg: linear-gradient(90deg, rgba(91,136,255,0.08), rgba(214,174,82,0.03) 45%, rgba(102,200,138,0.04));
+      --card-border: rgba(255,255,255,0.07);
+      --card-header-border: rgba(255,255,255,0.06);
+      --card-text: #edf3ff;
+      --card-text-muted: rgba(255,255,255,0.72);
+      --card-stat-bg: rgba(255,255,255,0.045);
+      --card-stat-bg2: rgba(255,255,255,0.02);
+      --card-stat-border: rgba(255,255,255,0.08);
+      --card-stat-label: #8f9ab2;
+      --card-mv-bg: rgba(255,255,255,0.03);
+      --card-mv-bg2: rgba(255,255,255,0.015);
+      --card-mv-border: rgba(255,255,255,0.07);
+      --card-mv-text: #e3e9f5;
+      --card-mv-strong: #ffffff;
+      --card-table-bg: rgba(8,15,28,0.72);
+      --card-table-bg2: rgba(8,15,28,0.86);
+      --card-table-border: rgba(255,255,255,0.07);
+      --card-thead-bg: rgba(255,255,255,0.025);
+      --card-thead-text: rgba(255,255,255,0.70);
+      --card-thead-border: rgba(255,255,255,0.08);
+      --card-row-odd: rgba(255,255,255,0.012);
+      --card-row-even: rgba(255,255,255,0.02);
+      --card-row-hover: rgba(91,136,255,0.07);
+      --card-td-text: #dce5f5;
+      --card-footer-border: rgba(255,255,255,0.05);
+      --card-footer-bg: rgba(255,255,255,0.012);
+      --card-disclaimer: rgba(255,255,255,0.94);
+      --card-footer-name: #ffffff;
+      --card-footer-web: rgba(255,255,255,0.82);
+      --card-contact: rgba(255,255,255,0.92);
+      --card-ref: rgba(255,255,255,0.84);
+      --card-date: #ffffff;
+      --card-logo-bg: rgba(255,255,255,0.045);
+      --card-logo-bg2: rgba(255,255,255,0.015);
+      --card-logo-border: rgba(255,255,255,0.08);
+      --card-banner-bg: linear-gradient(90deg, rgba(214,174,82,0.18), rgba(255,255,255,0.05));
+      --card-banner-border: rgba(214,174,82,0.20);
+      --card-banner-title: #fffaf0;
+      --card-note-text: #bcc8dd;
+      --card-header-right-bg: rgba(255,255,255,0.03);
     }
+
+    /* ══ REPORT CARD LIGHT MODE ══ */
+    .report-shell.light-mode {
+      background: linear-gradient(135deg, rgba(214,174,82,0.35) 0%, rgba(91,136,255,0.18) 34%, rgba(102,200,138,0.15) 68%, rgba(0,0,0,0.08) 100%);
+    }
+
+    .report-shell.light-mode .report {
+      background: linear-gradient(rgba(255,252,240,0.97), rgba(248,244,230,0.99));
+      border-color: rgba(0,0,0,0.10);
+    }
+
+    .report-shell.light-mode .header {
+      background: linear-gradient(90deg, rgba(91,136,255,0.06), rgba(214,174,82,0.04) 45%, rgba(102,200,138,0.04));
+      border-bottom-color: rgba(0,0,0,0.08);
+    }
+
+    .report-shell.light-mode .logo-area {
+      background: linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0.02));
+      border-color: rgba(0,0,0,0.10);
+    }
+
+    .report-shell.light-mode .header-right {
+      background: rgba(0,0,0,0.03);
+      border-color: rgba(0,0,0,0.10);
+    }
+
+    .report-shell.light-mode .report-date { color: #1a1f2e; }
+    .report-shell.light-mode .report-ref  { color: rgba(0,0,0,0.65); }
+
+    .report-shell.light-mode .banner {
+      background: linear-gradient(90deg, rgba(214,174,82,0.22), rgba(0,0,0,0.03));
+      border-color: rgba(214,174,82,0.35);
+    }
+
+    .report-shell.light-mode .banner-title { color: #1a1400; }
+
+    .report-shell.light-mode .stat-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.90), rgba(255,255,255,0.70));
+      border-color: rgba(0,0,0,0.10);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    }
+
+    .report-shell.light-mode .stat-label { color: #7a7060; }
+
+    .report-shell.light-mode .market-view {
+      background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.70));
+      border-color: rgba(0,0,0,0.08);
+      color: #2a2a3a;
+    }
+
+    .report-shell.light-mode .market-view strong { color: #1a1a2a; }
+
+    .report-shell.light-mode .pkr-note { color: rgba(0,0,0,0.55); }
+
+    .report-shell.light-mode .table-wrap {
+      background: linear-gradient(180deg, rgba(255,255,255,0.80), rgba(255,255,255,0.90));
+      border-color: rgba(0,0,0,0.10);
+    }
+
+    .report-shell.light-mode thead th {
+      background: rgba(0,0,0,0.03);
+      color: rgba(0,0,0,0.60);
+      border-bottom-color: rgba(0,0,0,0.10);
+    }
+
+    .report-shell.light-mode tbody tr:nth-child(odd)  { background: rgba(0,0,0,0.02); }
+    .report-shell.light-mode tbody tr:nth-child(even) { background: rgba(255,255,255,0.60); }
+    .report-shell.light-mode tbody tr:hover           { background: rgba(91,136,255,0.06); }
+    .report-shell.light-mode tbody td { color: #2a2a3a; border-bottom-color: rgba(0,0,0,0.06); }
+
+    .report-shell.light-mode .symbol  { color: #1a1a2a; }
+    .report-shell.light-mode td.num   { color: #2a2a3a; }
+    .report-shell.light-mode td.note  { color: #55607a; }
+
+    .report-shell.light-mode .report-footer {
+      border-top-color: rgba(0,0,0,0.08);
+      background: rgba(0,0,0,0.02);
+    }
+
+    .report-shell.light-mode .disclaimer { color: rgba(0,0,0,0.80); }
+    .report-shell.light-mode .footer-name { color: #1a1a2a; }
+    .report-shell.light-mode .footer-web  { color: rgba(0,0,0,0.65); }
+    .report-shell.light-mode .footer-contact { color: rgba(0,0,0,0.82); }
 
     body {
       background:
-        radial-gradient(circle at top left, rgba(91,136,255,0.08), transparent 28%),
-        radial-gradient(circle at top right, rgba(102,200,138,0.06), transparent 24%),
-        linear-gradient(180deg, #04070d 0%, #08101b 100%);
+        radial-gradient(circle at top left, var(--bg-color-1), transparent 28%),
+        radial-gradient(circle at top right, var(--bg-color-2), transparent 24%),
+        linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
       font-family: 'Inter', sans-serif;
       min-height: 100vh;
       padding: 30px 16px 60px;
       color: var(--text);
+      transition: background 0.4s ease;
     }
 
-    .wrapper {
-      max-width: 1140px;
-      margin: 0 auto;
-    }
+    .wrapper { max-width: 1140px; margin: 0 auto; }
 
     .topbar {
       max-width: 1140px;
@@ -58,24 +187,36 @@
       text-transform: uppercase;
     }
 
+    .sync-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.55);
+    }
+    .sync-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      transition: background 0.4s;
+    }
+    .sync-dot.ok    { background: #66c88a; box-shadow: 0 0 8px rgba(102,200,138,0.5); }
+    .sync-dot.error { background: #f07178; box-shadow: 0 0 8px rgba(240,113,120,0.4); }
+    .sync-dot.busy  { background: #d6ae52; box-shadow: 0 0 8px rgba(214,174,82,0.4); animation: pulse 1s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
     .report-shell {
       position: relative;
       border-radius: 28px;
       padding: 1px;
-      background:
-        linear-gradient(
-          135deg,
-          rgba(214,174,82,0.28) 0%,
-          rgba(91,136,255,0.12) 34%,
-          rgba(102,200,138,0.10) 68%,
-          rgba(255,255,255,0.05) 100%
-        );
+      background: linear-gradient(135deg, rgba(214,174,82,0.28) 0%, rgba(91,136,255,0.12) 34%, rgba(102,200,138,0.10) 68%, rgba(255,255,255,0.05) 100%);
       box-shadow: var(--shadow-lg);
     }
 
     .report {
       background:
-        linear-gradient(rgba(6, 11, 23, 0.84), rgba(6, 11, 23, 0.92)),
+        linear-gradient(rgba(6,11,23,0.84), rgba(6,11,23,0.92)),
         url("background.png") center center / cover no-repeat;
       border-radius: 27px;
       overflow: hidden;
@@ -85,44 +226,79 @@
       position: relative;
     }
 
+    /* ── Background Theme Panel ── */
+    .bg-theme-panel {
+      background: linear-gradient(180deg, rgba(18,29,49,0.95), rgba(10,16,28,0.98));
+      border: 1px solid rgba(255,255,255,0.07); border-radius: 24px;
+      padding: 22px 28px; margin-bottom: 16px; box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(10px);
+    }
+    .bg-theme-title {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700;
+      color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px;
+    }
+    .bg-theme-grid {
+      display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+    }
+    .theme-btn {
+      display: flex; align-items: center; gap: 8px;
+      padding: 9px 16px; border-radius: 12px; cursor: pointer;
+      font-size: 12px; font-weight: 700; border: 1.5px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.80);
+      transition: all 0.18s ease; white-space: nowrap;
+    }
+    .theme-btn:hover { transform: translateY(-1px); border-color: rgba(255,255,255,0.22); background: rgba(255,255,255,0.08); }
+    .theme-btn.active { border-color: var(--gold); color: var(--gold); background: rgba(214,174,82,0.10); }
+    .theme-swatch {
+      width: 14px; height: 14px; border-radius: 4px; flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .custom-color-wrap {
+      display: flex; align-items: center; gap: 8px;
+      padding: 6px 14px; border-radius: 12px;
+      background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.10);
+    }
+    .custom-color-wrap label { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.70); cursor: pointer; }
+    .custom-color-wrap input[type="color"] {
+      width: 28px; height: 28px; border: none; background: none; cursor: pointer;
+      padding: 0; border-radius: 6px; overflow: hidden;
+    }
+    .custom-color-wrap input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+    .custom-color-wrap input[type="color"]::-webkit-color-swatch { border-radius: 5px; border: none; }
+
+    /* ── Screenshot btn in theme panel ── */
+    .theme-screenshot-btn {
+      margin-left: auto;
+      background: linear-gradient(180deg, rgba(214,174,82,0.26), rgba(214,174,82,0.16));
+      border: 1px solid rgba(214,174,82,0.30); color: #eaf1ff;
+      font-size: 12px; font-weight: 700; padding: 9px 18px;
+      border-radius: 12px; cursor: pointer; transition: all 0.18s ease; white-space: nowrap;
+    }
+    .theme-screenshot-btn:hover { background: linear-gradient(180deg, rgba(214,174,82,0.34), rgba(214,174,82,0.22)); transform: translateY(-1px); }
+    .theme-screenshot-btn:disabled { opacity: 0.65; cursor: wait; transform: none; }
+
     .header {
       padding: 30px 30px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
-      background:
-        linear-gradient(90deg, rgba(91,136,255,0.08), rgba(214,174,82,0.03) 45%, rgba(102,200,138,0.04));
+      background: linear-gradient(90deg, rgba(91,136,255,0.08), rgba(214,174,82,0.03) 45%, rgba(102,200,138,0.04));
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
-    .footer-right-block {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-    }
+    .footer-right-block { display: flex; flex-direction: column; align-items: flex-end; }
 
     .footer-contact {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 8px;
-      font-size: 13px;
-      font-weight: 600;
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 8px; font-size: 13px; font-weight: 600;
       color: rgba(255,255,255,0.92);
     }
 
-    .whatsapp-icon-img {
-      width: 18px;
-      height: 18px;
-      object-fit: contain;
-      filter: brightness(1.1);
-    }
+    .whatsapp-icon-img { width: 18px; height: 18px; object-fit: contain; filter: brightness(1.1); }
 
     .logo-area {
-      display: flex;
-      align-items: center;
-      padding: 12px 14px;
+      display: flex; align-items: center; padding: 12px 14px;
       border-radius: 18px;
       background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.015));
       border: 1px solid rgba(255,255,255,0.08);
@@ -130,401 +306,186 @@
     }
 
     .header-right {
-      text-align: right;
-      padding: 12px 16px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
+      text-align: right; padding: 12px 16px; border-radius: 16px;
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
       min-width: 200px;
     }
 
-    .report-date {
-      font-size: 15px;
-      color: #ffffff;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .report-ref {
-      font-size: 11px;
-      color: rgba(255,255,255,0.84);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
+    .report-date { font-size: 15px; color: #ffffff; font-weight: 700; margin-bottom: 4px; }
+    .report-ref  { font-size: 11px; color: rgba(255,255,255,0.84); letter-spacing: 0.12em; text-transform: uppercase; }
 
     .banner {
-      margin: 0 30px;
-      margin-top: 18px;
-      background:
-        linear-gradient(90deg, rgba(214,174,82,0.18), rgba(255,255,255,0.05));
-      border: 1px solid rgba(214,174,82,0.20);
-      border-radius: 22px;
-      padding: 18px 22px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
+      margin: 0 30px; margin-top: 18px;
+      background: linear-gradient(90deg, rgba(214,174,82,0.18), rgba(255,255,255,0.05));
+      border: 1px solid rgba(214,174,82,0.20); border-radius: 22px;
+      padding: 18px 22px; display: flex; align-items: center;
+      justify-content: space-between; gap: 18px;
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
     }
 
-    .banner-title {
-      font-size: 26px;
-      font-weight: 800;
-      color: #fffaf0;
-      letter-spacing: -0.02em;
-    }
+    .banner-title { font-size: 26px; font-weight: 800; color: #fffaf0; letter-spacing: -0.02em; }
 
     .banner-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.24em;
-      color: var(--gold);
-      text-transform: uppercase;
-      white-space: nowrap;
+      font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700;
+      letter-spacing: 0.24em; color: var(--gold); text-transform: uppercase; white-space: nowrap;
     }
 
-    .body {
-      padding: 28px 30px 30px;
-    }
+    .body { padding: 28px 30px 30px; }
 
     .section-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 14px;
+      font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 600;
+      letter-spacing: 0.18em; color: var(--gold); text-transform: uppercase; margin-bottom: 14px;
     }
 
-    .stat-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-bottom: 22px;
-    }
+    .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 22px; }
 
     .stat-card {
       position: relative;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02));
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 22px;
-      padding: 18px 18px 16px;
-      overflow: hidden;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.22);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08); border-radius: 22px; padding: 18px 18px 16px;
+      overflow: hidden; box-shadow: 0 12px 35px rgba(0,0,0,0.22);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
     }
 
     .stat-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 5px;
+      content: ""; position: absolute; inset: 0 auto 0 0; width: 5px;
       background: linear-gradient(180deg, var(--gold), rgba(214,174,82,0.14));
     }
 
-    .stat-card.stoploss::before {
-      background: linear-gradient(180deg, var(--red), rgba(240,113,120,0.18));
-    }
+    .stat-card.stoploss::before { background: linear-gradient(180deg, var(--red), rgba(240,113,120,0.18)); }
 
     .stat-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 12px;
-      letter-spacing: 0.14em;
-      color: #8f9ab2;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-      font-weight: 600;
+      font-family: 'Barlow Condensed', sans-serif; font-size: 12px; letter-spacing: 0.14em;
+      color: #8f9ab2; text-transform: uppercase; margin-bottom: 12px; font-weight: 600;
     }
 
     .stat-value {
-      font-size: 40px;
-      line-height: 1;
-      font-weight: 800;
-      color: var(--gold);
-      font-variant-numeric: tabular-nums;
-      letter-spacing: -0.03em;
+      font-size: 40px; line-height: 1; font-weight: 800; color: var(--gold);
+      font-variant-numeric: tabular-nums; letter-spacing: -0.03em;
     }
 
-    .stat-card.stoploss .stat-value {
-      color: var(--red);
-    }
+    .stat-card.stoploss .stat-value { color: var(--red); }
 
     .market-view {
-      font-size: 17px;
-      line-height: 1.9;
-      color: #e3e9f5;
-      margin-bottom: 20px;
+      font-size: 17px; line-height: 1.9; color: #e3e9f5; margin-bottom: 20px;
       padding: 18px 20px;
       background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
-      border: 1px solid rgba(255,255,255,0.07);
-      border-left: 4px solid var(--gold);
-      border-radius: 18px;
-      box-shadow: var(--shadow-md);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.07); border-left: 4px solid var(--gold);
+      border-radius: 18px; box-shadow: var(--shadow-md);
+      backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
     }
 
-    .market-view strong {
-      color: #ffffff;
-      font-weight: 800;
-    }
+    .market-view strong { color: #ffffff; font-weight: 800; }
 
     .stocks-header {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      margin-bottom: 16px;
-      gap: 12px;
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 16px; gap: 12px;
     }
 
-    .pkr-note {
-      font-size: 11px;
-      color: rgba(255,255,255,0.72);
-      white-space: nowrap;
-    }
+    .pkr-note { font-size: 11px; color: rgba(255,255,255,0.72); white-space: nowrap; }
 
     .table-wrap {
-      border-radius: 22px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.07);
-      background:
-        linear-gradient(180deg, rgba(8,15,28,0.72), rgba(8,15,28,0.86));
+      border-radius: 22px; overflow: hidden; border: 1px solid rgba(255,255,255,0.07);
+      background: linear-gradient(180deg, rgba(8,15,28,0.72), rgba(8,15,28,0.86));
       box-shadow: 0 16px 40px rgba(0,0,0,0.24);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      table-layout: fixed;
-    }
+    table { width: 100%; border-collapse: collapse; table-layout: fixed; }
 
     thead th {
       background: rgba(255,255,255,0.025);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 13px;
-      letter-spacing: 0.12em;
-      font-weight: 600;
-      color: rgba(255,255,255,0.70);
-      text-transform: uppercase;
-      text-align: left;
-      padding: 20px 20px;
+      font-family: 'Barlow Condensed', sans-serif; font-size: 13px;
+      letter-spacing: 0.12em; font-weight: 600; color: rgba(255,255,255,0.70);
+      text-transform: uppercase; text-align: left; padding: 20px 20px;
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    thead th.r {
-      text-align: right;
-    }
+    thead th.r { text-align: right; }
 
-    tbody tr:nth-child(odd) {
-      background: rgba(255,255,255,0.012);
-    }
-
-    tbody tr:nth-child(even) {
-      background: rgba(255,255,255,0.02);
-    }
-
-    tbody tr:hover {
-      background: rgba(91,136,255,0.07);
-    }
+    tbody tr:nth-child(odd)  { background: rgba(255,255,255,0.012); }
+    tbody tr:nth-child(even) { background: rgba(255,255,255,0.02); }
+    tbody tr:hover           { background: rgba(91,136,255,0.07); }
 
     tbody td {
-      padding: 24px 20px;
-      font-size: 16px;
+      padding: 24px 20px; font-size: 16px;
       border-bottom: 1px solid rgba(255,255,255,0.05);
-      vertical-align: middle;
-      color: #dce5f5;
+      vertical-align: middle; color: #dce5f5;
     }
 
-    tbody tr:last-child td {
-      border-bottom: none;
-    }
+    tbody tr:last-child td { border-bottom: none; }
 
-    .symbol-cell {
-      padding-right: 8px;
-    }
-
-    .symbol-wrap {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-width: 0;
-    }
+    .symbol-cell { padding-right: 8px; }
+    .symbol-wrap { display: flex; align-items: center; gap: 10px; min-width: 0; }
 
     .symbol {
-      font-size: 20px;
-      font-weight: 800;
-      color: #ffffff;
-      border-left: 4px solid var(--green);
-      padding-left: 12px;
-      letter-spacing: -0.02em;
-      display: inline-block;
-      line-height: 1;
+      font-size: 20px; font-weight: 800; color: #ffffff;
+      border-left: 4px solid var(--green); padding-left: 12px;
+      letter-spacing: -0.02em; display: inline-block; line-height: 1;
     }
 
     .islamic-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 30px;
-      height: 30px;
-      border-radius: 999px;
-      background: rgba(214,174,82,0.14);
-      border: 1px solid rgba(214,174,82,0.28);
-      font-size: 15px;
-      line-height: 1;
-      flex-shrink: 0;
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 30px; height: 30px; border-radius: 999px;
+      background: rgba(214,174,82,0.14); border: 1px solid rgba(214,174,82,0.28);
+      font-size: 15px; line-height: 1; flex-shrink: 0;
     }
 
     .badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 130px;
-      background: var(--green-soft);
-      color: var(--green);
-      border: 1px solid rgba(102,200,138,0.22);
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 700;
-      padding: 10px 16px;
-      white-space: nowrap;
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 130px; background: var(--green-soft); color: var(--green);
+      border: 1px solid rgba(102,200,138,0.22); border-radius: 999px;
+      font-size: 14px; font-weight: 700; padding: 10px 16px; white-space: nowrap;
     }
 
-    .badge.sell {
-      background: var(--red-soft);
-      color: var(--red);
-      border-color: rgba(240,113,120,0.20);
-    }
+    .badge.sell { background: var(--red-soft); color: var(--red); border-color: rgba(240,113,120,0.20); }
+    .badge.hold { background: var(--gold-soft); color: var(--gold); border-color: rgba(214,174,82,0.20); }
 
-    .badge.hold {
-      background: var(--gold-soft);
-      color: var(--gold);
-      border-color: rgba(214,174,82,0.20);
-    }
-
-    td.num,
-    td.tgt,
-    td.stop {
-      text-align: right;
-      font-variant-numeric: tabular-nums;
-      white-space: nowrap;
-    }
-
-    td.num {
-      color: #dce5f5;
-      padding-left: 26px;
-    }
-
-    td.tgt {
-      color: #82e6b7;
-      font-weight: 600;
-      padding-left: 26px;
-    }
-
-    td.stop {
-      color: #ff8288;
-      font-weight: 600;
-      padding-left: 26px;
-    }
-
-    td.note {
-      font-size: 15px;
-      color: #bcc8dd;
-      font-style: italic;
-      line-height: 1.6;
-      padding-left: 26px;
-    }
+    td.num, td.tgt, td.stop { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    td.num  { color: #dce5f5; padding-left: 26px; }
+    td.tgt  { color: #82e6b7; font-weight: 600; padding-left: 26px; }
+    td.stop { color: #ff8288; font-weight: 600; padding-left: 26px; }
+    td.note { font-size: 15px; color: #bcc8dd; font-style: italic; line-height: 1.6; padding-left: 26px; }
 
     .report-footer {
-      padding: 18px 30px 22px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      background: rgba(255,255,255,0.012);
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 22px;
-      margin-top: 18px;
+      padding: 18px 30px 22px; border-top: 1px solid rgba(255,255,255,0.05);
+      background: rgba(255,255,255,0.012); display: flex; align-items: flex-end;
+      justify-content: space-between; gap: 22px; margin-top: 18px;
     }
 
-    .disclaimer {
-      font-size: 15px;
-      color: rgba(255,255,255,0.94);
-      max-width: 760px;
-      line-height: 1.8;
-    }
+    .disclaimer { font-size: 15px; color: rgba(255,255,255,0.94); max-width: 760px; line-height: 1.8; }
 
     .footer-name {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 8px;
-      font-size: 12px;
-      color: #ffffff;
-      margin-bottom: 4px;
+      display: flex; align-items: center; justify-content: flex-end;
+      gap: 8px; font-size: 12px; color: #ffffff; margin-bottom: 4px;
     }
 
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 12px rgba(214,174,82,0.45);
-    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 12px rgba(214,174,82,0.45); }
+    .footer-web { font-size: 11px; color: rgba(255,255,255,0.82); text-align: right; }
 
-    .footer-web {
-      font-size: 11px;
-      color: rgba(255,255,255,0.82);
-      text-align: right;
-    }
-
+    /* ── Edit card ── */
     .edit-card {
       background: linear-gradient(180deg, rgba(18,29,49,0.95), rgba(10,16,28,0.98));
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 24px;
-      padding: 28px 30px;
-      margin-top: 22px;
-      box-shadow: var(--shadow-lg);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.07); border-radius: 24px;
+      padding: 28px 30px; margin-top: 22px; box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
     }
 
     .edit-card-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 22px;
+      font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700;
+      color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 22px;
     }
 
     .field-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.68);
-      text-transform: uppercase;
-      margin-bottom: 8px;
-      display: block;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.68); text-transform: uppercase; margin-bottom: 8px; display: block;
     }
 
     .field-input {
-      width: 100%;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px;
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      padding: 12px 14px;
-      outline: none;
-      transition: all 0.18s ease;
+      width: 100%; background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;
+      color: var(--text); font-family: 'Inter', sans-serif; font-size: 14px;
+      padding: 12px 14px; outline: none; transition: all 0.18s ease;
     }
 
     .field-input:focus {
@@ -533,418 +494,227 @@
       background: rgba(255,255,255,0.04);
     }
 
-    .field-input::placeholder {
-      color: #7c89a5;
-    }
+    .field-input::placeholder { color: #7c89a5; }
 
     .field-input[type="date"]::-webkit-calendar-picker-indicator {
-      filter: invert(1) brightness(0.9);
-      cursor: pointer;
+      filter: invert(1) brightness(0.9); cursor: pointer;
     }
 
-    .divider {
-      border: none;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      margin: 22px 0;
-    }
+    .divider { border: none; border-top: 1px solid rgba(255,255,255,0.05); margin: 22px 0; }
 
     .stocks-edit-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--muted);
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
+      font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700;
+      color: var(--muted); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 12px;
     }
 
-    .fetch-tools {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 14px;
+    .fetch-tools { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+
+    .single-fetch-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+    .single-symbol-input { width: 180px; }
+
+    .fetch-btn, .pdf-btn {
+      border: 1px solid rgba(91,136,255,0.32); color: #eaf1ff;
+      font-size: 13px; font-weight: 700; padding: 12px 18px;
+      border-radius: 12px; cursor: pointer; transition: all 0.18s ease;
     }
 
-    .single-fetch-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-    }
+    .fetch-btn { background: linear-gradient(180deg, rgba(91,136,255,0.24), rgba(91,136,255,0.16)); }
+    .fetch-btn:hover { background: linear-gradient(180deg, rgba(91,136,255,0.32), rgba(91,136,255,0.20)); transform: translateY(-1px); }
 
-    .single-symbol-input {
-      width: 180px;
-    }
+    .pdf-btn { background: linear-gradient(180deg, rgba(214,174,82,0.26), rgba(214,174,82,0.16)); border-color: rgba(214,174,82,0.30); }
+    .pdf-btn:hover { background: linear-gradient(180deg, rgba(214,174,82,0.34), rgba(214,174,82,0.22)); transform: translateY(-1px); }
 
-    .fetch-btn,
-    .pdf-btn {
-      border: 1px solid rgba(91,136,255,0.32);
-      color: #eaf1ff;
-      font-size: 13px;
-      font-weight: 700;
-      padding: 12px 18px;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: all 0.18s ease;
-    }
+    .fetch-btn:disabled, .pdf-btn:disabled { opacity: 0.65; cursor: wait; transform: none; }
 
-    .fetch-btn {
-      background: linear-gradient(180deg, rgba(91,136,255,0.24), rgba(91,136,255,0.16));
-    }
+    .fetch-status { font-size: 13px; color: rgba(255,255,255,0.82); min-height: 20px; }
+    .fetch-status.error   { color: #ff9aa0; }
+    .fetch-status.success { color: #82e6b7; }
 
-    .fetch-btn:hover {
-      background: linear-gradient(180deg, rgba(91,136,255,0.32), rgba(91,136,255,0.20));
-      transform: translateY(-1px);
-    }
-
-    .pdf-btn {
-      background: linear-gradient(180deg, rgba(214,174,82,0.26), rgba(214,174,82,0.16));
-      border-color: rgba(214,174,82,0.30);
-    }
-
-    .pdf-btn:hover {
-      background: linear-gradient(180deg, rgba(214,174,82,0.34), rgba(214,174,82,0.22));
-      transform: translateY(-1px);
-    }
-
-    .fetch-btn:disabled,
-    .pdf-btn:disabled {
-      opacity: 0.65;
-      cursor: wait;
-      transform: none;
-    }
-
-    .fetch-status {
-      font-size: 13px;
-      color: rgba(255,255,255,0.82);
-      min-height: 20px;
-    }
-
-    .fetch-status.error {
-      color: #ff9aa0;
-    }
-
-    .fetch-status.success {
-      color: #82e6b7;
-    }
-
-
+    /* ── Admin / Records ── */
     .admin-record-dashboard {
-      margin: 22px 0;
-      padding: 18px;
-      border-radius: 18px;
+      margin: 22px 0; padding: 18px; border-radius: 18px;
       background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.015));
       border: 1px solid rgba(255,255,255,0.08);
     }
 
     .admin-dashboard-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 12px;
+      font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
     }
 
-    .record-summary {
-      font-size: 13px;
-      color: rgba(255,255,255,0.78);
-      margin-bottom: 14px;
-      line-height: 1.6;
-    }
+    .record-summary { font-size: 13px; color: rgba(255,255,255,0.78); margin-bottom: 14px; line-height: 1.6; }
 
-    .record-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 14px;
-    }
+    .record-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
 
     .record-view-control {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 10px;
-      border-radius: 12px;
-      background: rgba(255,255,255,0.025);
-      border: 1px solid rgba(255,255,255,0.08);
+      display: flex; align-items: center; gap: 8px; padding: 8px 10px;
+      border-radius: 12px; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.08);
     }
 
     .record-view-control span {
-      font-size: 12px;
-      font-weight: 700;
-      color: rgba(255,255,255,0.68);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+      font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.68);
+      text-transform: uppercase; letter-spacing: 0.08em;
     }
 
     .record-select {
-      min-width: 230px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 10px;
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      padding: 9px 10px;
-      outline: none;
+      min-width: 230px; background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09); border-radius: 10px;
+      color: var(--text); font-family: 'Inter', sans-serif; font-size: 13px;
+      padding: 9px 10px; outline: none;
     }
 
-    .record-select option {
-      background: #0b1220;
-      color: #ffffff;
-    }
+    .record-select option { background: #0b1220; color: #ffffff; }
 
-    .record-diff-note {
-      font-size: 12px;
-      line-height: 1.45;
-      color: rgba(255,255,255,0.74);
-      white-space: normal;
-    }
+    .record-diff-note { font-size: 12px; line-height: 1.45; color: rgba(255,255,255,0.74); white-space: normal; }
 
     .record-table-wrap {
-      overflow-x: auto;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.07);
-      background: rgba(255,255,255,0.012);
+      overflow-x: auto; border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.012);
     }
 
-    .record-table {
-      width: 100%;
-      border-collapse: collapse;
-      table-layout: auto;
-    }
+    .record-table { width: 100%; border-collapse: collapse; table-layout: auto; }
 
-    .record-table th,
-    .record-table td {
-      padding: 12px 14px;
-      font-size: 13px;
+    .record-table th, .record-table td {
+      padding: 12px 14px; font-size: 13px;
       border-bottom: 1px solid rgba(255,255,255,0.06);
-      color: rgba(255,255,255,0.86);
-      white-space: nowrap;
+      color: rgba(255,255,255,0.86); white-space: nowrap;
     }
 
     .record-table th {
-      color: rgba(255,255,255,0.62);
-      text-align: left;
-      background: rgba(255,255,255,0.025);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 11px;
+      color: rgba(255,255,255,0.62); text-align: left;
+      background: rgba(255,255,255,0.025); font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px;
     }
 
     .record-table tr:last-child td { border-bottom: none; }
-    .record-up { color: #82e6b7 !important; font-weight: 800; }
-    .record-down { color: #ff8288 !important; font-weight: 800; }
-    .record-flat { color: var(--gold) !important; font-weight: 800; }
+    .record-up      { color: #82e6b7 !important; font-weight: 800; }
+    .record-down    { color: #ff8288 !important; font-weight: 800; }
+    .record-flat    { color: var(--gold) !important; font-weight: 800; }
     .record-missing { color: #ffb4b8 !important; font-weight: 800; }
+
     .record-tag {
-      display: inline-flex;
-      align-items: center;
-      margin-left: 8px;
-      padding: 3px 7px;
-      border-radius: 999px;
-      background: rgba(91,136,255,0.14);
-      border: 1px solid rgba(91,136,255,0.24);
-      color: #b9caff;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      vertical-align: middle;
+      display: inline-flex; align-items: center; margin-left: 8px;
+      padding: 3px 7px; border-radius: 999px;
+      background: rgba(91,136,255,0.14); border: 1px solid rgba(91,136,255,0.24);
+      color: #b9caff; font-size: 10px; font-weight: 800;
+      letter-spacing: 0.04em; text-transform: uppercase; vertical-align: middle;
     }
 
+    /* ── Performance ── */
+    .performance-metric-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 12px; margin: 14px 0; }
 
-    .performance-metric-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
-      margin: 14px 0;
-    }
-
-    .performance-card {
-      padding: 14px;
-      border-radius: 14px;
-      background: rgba(255,255,255,0.025);
-      border: 1px solid rgba(255,255,255,0.07);
-    }
-
-    .performance-card-label {
-      font-size: 11px;
-      color: rgba(255,255,255,0.62);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 8px;
-      font-weight: 700;
-    }
-
-    .performance-card-value {
-      font-size: 26px;
-      line-height: 1;
-      font-weight: 800;
-      color: #ffffff;
-    }
-
+    .performance-card { padding: 14px; border-radius: 14px; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07); }
+    .performance-card-label { font-size: 11px; color: rgba(255,255,255,0.62); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; font-weight: 700; }
+    .performance-card-value { font-size: 26px; line-height: 1; font-weight: 800; color: #ffffff; }
     .performance-card-value.green { color: #82e6b7; }
-    .performance-card-value.red { color: #ff8288; }
-    .performance-card-value.gold { color: var(--gold); }
-    .performance-card-value.blue { color: #9eb7ff; }
+    .performance-card-value.red   { color: #ff8288; }
+    .performance-card-value.gold  { color: var(--gold); }
+    .performance-card-value.blue  { color: #9eb7ff; }
+    .performance-subnote { margin-top: 8px; font-size: 12px; color: rgba(255,255,255,0.62); line-height: 1.45; }
 
-    .performance-subnote {
-      margin-top: 8px;
-      font-size: 12px;
-      color: rgba(255,255,255,0.62);
-      line-height: 1.45;
-    }
-
-    @media (max-width: 980px) {
-      .performance-metric-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 760px) {
-      .performance-metric-grid { grid-template-columns: 1fr; }
-    }
-
-
+    /* ── Stock row editor ── */
     .stock-row {
       display: grid;
       grid-template-columns: 1fr 1.25fr 0.9fr 0.9fr 0.9fr 0.9fr 1.7fr 110px 40px;
-      gap: 10px;
-      margin-bottom: 10px;
-      align-items: center;
+      gap: 10px; margin-bottom: 10px; align-items: center;
     }
 
     .checkbox-wrap {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      justify-content: flex-start;
-      padding: 0 6px;
-      height: 42px;
-      border-radius: 12px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: rgba(255,255,255,0.84);
-      font-size: 13px;
-      white-space: nowrap;
+      display: flex; align-items: center; gap: 10px; justify-content: flex-start;
+      padding: 0 6px; height: 42px; border-radius: 12px;
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.84); font-size: 13px; white-space: nowrap;
     }
 
-    .checkbox-wrap input {
-      width: 16px;
-      height: 16px;
-      accent-color: #d6ae52;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-
-    .checkbox-wrap span {
-      font-size: 13px;
-      font-weight: 600;
-    }
+    .checkbox-wrap input { width: 16px; height: 16px; accent-color: #d6ae52; cursor: pointer; flex-shrink: 0; }
+    .checkbox-wrap span  { font-size: 13px; font-weight: 600; }
 
     .add-row-btn {
-      background: rgba(255,255,255,0.025);
-      border: 1px dashed rgba(214,174,82,0.30);
-      color: var(--gold);
-      font-size: 12px;
-      font-weight: 700;
-      padding: 12px;
-      border-radius: 12px;
-      cursor: pointer;
-      width: 100%;
-      margin-bottom: 22px;
+      background: rgba(255,255,255,0.025); border: 1px dashed rgba(214,174,82,0.30);
+      color: var(--gold); font-size: 12px; font-weight: 700; padding: 12px;
+      border-radius: 12px; cursor: pointer; width: 100%; margin-bottom: 22px;
       transition: all 0.18s ease;
     }
 
-    .add-row-btn:hover {
-      background: rgba(214,174,82,0.08);
-      border-color: rgba(214,174,82,0.55);
-    }
+    .add-row-btn:hover { background: rgba(214,174,82,0.08); border-color: rgba(214,174,82,0.55); }
 
     .del-btn {
-      background: rgba(240,113,120,0.10);
-      border: 1px solid rgba(240,113,120,0.25);
-      color: var(--red);
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 18px;
-      height: 40px;
-      width: 40px;
-      line-height: 1;
-      transition: all 0.18s ease;
+      background: rgba(240,113,120,0.10); border: 1px solid rgba(240,113,120,0.25);
+      color: var(--red); border-radius: 10px; cursor: pointer;
+      font-size: 18px; height: 40px; width: 40px; line-height: 1; transition: all 0.18s ease;
     }
 
-    .del-btn:hover {
-      background: rgba(240,113,120,0.16);
-    }
+    .del-btn:hover { background: rgba(240,113,120,0.16); }
 
     .update-btn {
       background: linear-gradient(180deg, #e0ba61 0%, #cfa24b 100%);
-      border: none;
-      color: #10151f;
-      font-size: 14px;
-      font-weight: 800;
-      padding: 14px 34px;
-      border-radius: 12px;
-      cursor: pointer;
+      border: none; color: #10151f; font-size: 14px; font-weight: 800;
+      padding: 14px 34px; border-radius: 12px; cursor: pointer;
       box-shadow: 0 10px 24px rgba(214,174,82,0.18);
       transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
 
-    .update-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 30px rgba(214,174,82,0.24);
+    .update-btn:hover { transform: translateY(-1px); box-shadow: 0 14px 30px rgba(214,174,82,0.24); }
+    .update-btn:disabled { opacity: 0.65; cursor: wait; transform: none; }
+
+    .sync-btn {
+      background: linear-gradient(180deg, rgba(102,200,138,0.24), rgba(102,200,138,0.14));
+      border: 1px solid rgba(102,200,138,0.32); color: #d0f5e3;
+      font-size: 14px; font-weight: 800; padding: 14px 28px; border-radius: 12px;
+      cursor: pointer; transition: all 0.18s ease;
     }
+
+    .sync-btn:hover { background: linear-gradient(180deg, rgba(102,200,138,0.32), rgba(102,200,138,0.20)); transform: translateY(-1px); }
+    .sync-btn:disabled { opacity: 0.65; cursor: wait; transform: none; }
 
     .saved-toast {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      margin-left: 14px;
-      font-size: 13px;
-      color: var(--green);
-      font-weight: 700;
-      opacity: 0;
-      transition: opacity 0.3s;
+      display: inline-flex; align-items: center; gap: 7px; margin-left: 14px;
+      font-size: 13px; color: var(--green); font-weight: 700;
+      opacity: 0; transition: opacity 0.3s;
     }
 
-    .saved-toast.show {
-      opacity: 1;
-    }
+    .saved-toast.show { opacity: 1; }
 
+    /* ── Google Sheets info note ── */
+    .sheets-info {
+      background: rgba(91,136,255,0.06); border: 1px solid rgba(91,136,255,0.18);
+      border-radius: 14px; padding: 14px 18px; margin-bottom: 18px;
+      font-size: 13px; color: rgba(255,255,255,0.80); line-height: 1.6;
+    }
+    .sheets-info strong { color: #9eb7ff; }
+    .sheets-info a { color: #9eb7ff; text-decoration: underline; }
+    .sheets-url-row { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+    .sheets-url-input { flex: 1; }
+    .sheets-save-btn {
+      background: linear-gradient(180deg, rgba(91,136,255,0.28), rgba(91,136,255,0.18));
+      border: 1px solid rgba(91,136,255,0.35); color: #eaf1ff;
+      font-size: 12px; font-weight: 700; padding: 11px 16px; border-radius: 10px;
+      cursor: pointer; transition: all 0.18s ease; white-space: nowrap;
+    }
+    .sheets-save-btn:hover { transform: translateY(-1px); background: rgba(91,136,255,0.34); }
+
+    /* ── Responsive ── */
     @media (max-width: 980px) {
-      .stat-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-grid { grid-template-columns: repeat(2,1fr); }
       .stock-row { grid-template-columns: 1fr 1fr; }
       .header { flex-direction: column; align-items: flex-start; }
       .header-right { width: 100%; text-align: left; }
       .report-footer { flex-direction: column; align-items: flex-start; }
       .footer-name, .footer-web, .footer-right-block { justify-content: flex-start; text-align: left; align-items: flex-start; }
+      .performance-metric-grid { grid-template-columns: repeat(2,1fr); }
     }
 
     @media (max-width: 760px) {
       body { padding: 18px 10px 40px; }
-
-      .header, .body, .report-footer, .edit-card, .banner {
-        padding-left: 18px;
-        padding-right: 18px;
-      }
-
-      .banner {
-        margin-left: 18px;
-        margin-right: 18px;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
+      .header, .body, .report-footer, .edit-card, .banner { padding-left: 18px; padding-right: 18px; }
+      .banner { margin-left: 18px; margin-right: 18px; flex-direction: column; align-items: flex-start; }
       .stat-grid { grid-template-columns: 1fr; }
       .stocks-header { flex-direction: column; align-items: flex-start; }
       .table-wrap { overflow-x: auto; }
       table { min-width: 980px; }
+      .performance-metric-grid { grid-template-columns: 1fr; }
+      .bg-theme-grid { flex-direction: column; align-items: flex-start; }
+      .theme-screenshot-btn { margin-left: 0; }
     }
   </style>
 </head>
@@ -952,20 +722,88 @@
 
   <div class="topbar">
     <div class="topbar-title">Youngs Capital — Daily Report</div>
+    <div class="sync-bar">
+      <div class="sync-dot" id="sync-dot"></div>
+      <span id="sync-label">Not synced</span>
+    </div>
   </div>
 
   <div class="wrapper">
 
-    <div class="report-shell">
+    <!-- ══ BACKGROUND THEME PANEL ══════════════════════════════ -->
+    <div class="bg-theme-panel">
+      <div class="bg-theme-title">🎨 Dashboard Background Theme</div>
+      <div class="bg-theme-grid" id="theme-btn-group">
+
+        <button class="theme-btn active" data-theme="default" onclick="applyTheme('default', this)">
+          <span class="theme-swatch" style="background: linear-gradient(135deg, #04070d, #08101b)"></span>
+          Default Dark
+        </button>
+
+        <button class="theme-btn" data-theme="midnight" onclick="applyTheme('midnight', this)">
+          <span class="theme-swatch" style="background: linear-gradient(135deg, #0a0015, #110033)"></span>
+          Midnight Purple
+        </button>
+
+        <button class="theme-btn" data-theme="emerald" onclick="applyTheme('emerald', this)">
+          <span class="theme-swatch" style="background: linear-gradient(135deg, #021208, #041f0e)"></span>
+          Emerald Night
+        </button>
+
+        <button class="theme-btn" data-theme="slate" onclick="applyTheme('slate', this)">
+          <span class="theme-swatch" style="background: linear-gradient(135deg, #0d1117, #1c2333)"></span>
+          Slate Blue
+        </button>
+
+        <button class="theme-btn" data-theme="ember" onclick="applyTheme('ember', this)">
+          <span class="theme-swatch" style="background: linear-gradient(135deg, #120600, #1f0e00)"></span>
+          Ember Dark
+        </button>
+
+        <button class="theme-btn" data-theme="charcoal" onclick="applyTheme('charcoal', this)">
+          <span class="theme-swatch" style="background: linear-gradient(135deg, #111214, #1e2028)"></span>
+          Charcoal
+        </button>
+
+        <!-- Custom color picker -->
+        <div class="custom-color-wrap">
+          <label for="custom-bg-color">Custom:</label>
+          <input type="color" id="custom-bg-color" value="#04070d" onchange="applyCustomColor(this.value)" title="Pick custom background color" />
+        </div>
+
+      </div>
+
+      <!-- Report Card Mode Toggle row -->
+      <div style="margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.07); display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+        <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.55);">Report Card Mode</span>
+
+        <button class="theme-btn active" id="card-dark-btn" onclick="setCardMode('dark')">
+          <span class="theme-swatch" style="background:#06131a"></span>
+          🌙 Dark Mode
+        </button>
+        <button class="theme-btn" id="card-light-btn" onclick="setCardMode('light')">
+          <span class="theme-swatch" style="background:linear-gradient(135deg,#fff8e8,#f5edcc)"></span>
+          ☀️ Light Mode
+        </button>
+
+        <!-- Screenshot button -->
+        <button class="theme-screenshot-btn" id="screenshot-btn-theme" onclick="downloadScreenshot()">
+          📸 Download Screenshot
+        </button>
+      </div>
+    </div>
+
+    <!-- ══ REPORT CARD ══════════════════════════════════════════ -->
+    <div class="report-shell" id="report-shell">
       <div class="report" id="report-card">
+
         <div class="header">
           <div class="logo-area">
-            <img src="logo.png" alt="Youngs Capital" style="height: 52px; width: auto;" />
+            <img src="logo.png" alt="Youngs Capital" style="height:52px;width:auto;" />
           </div>
-
           <div class="header-right">
             <div class="report-date" id="disp-date"></div>
-            <div class="report-ref" id="disp-ref"></div>
+            <div class="report-ref"  id="disp-ref"></div>
           </div>
         </div>
 
@@ -1006,23 +844,14 @@
           <div class="table-wrap">
             <table>
               <colgroup>
-                <col style="width:19%">
-                <col style="width:16%">
-                <col style="width:10%">
-                <col style="width:10%">
-                <col style="width:10%">
-                <col style="width:10%">
-                <col style="width:25%">
+                <col style="width:19%"><col style="width:16%"><col style="width:10%">
+                <col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:25%">
               </colgroup>
               <thead>
                 <tr>
-                  <th>Symbol</th>
-                  <th>Strategy</th>
-                  <th class="r">Close</th>
-                  <th class="r">Target 1</th>
-                  <th class="r">Target 2</th>
-                  <th class="r">Stoploss</th>
-                  <th>Analyst Note</th>
+                  <th>Symbol</th><th>Strategy</th>
+                  <th class="r">Close</th><th class="r">Target 1</th>
+                  <th class="r">Target 2</th><th class="r">Stoploss</th><th>Analyst Note</th>
                 </tr>
               </thead>
               <tbody id="disp-stocks"></tbody>
@@ -1035,7 +864,6 @@
             Disclaimer: This report is for informational purposes only and does not constitute investment advice.
             Past performance is not indicative of future results. Consult your financial advisor before making investment decisions.
           </div>
-
           <div class="footer-right-block">
             <div class="footer-contact">
               <img src="whats.png" class="whatsapp-icon-img" alt="WhatsApp">
@@ -1045,25 +873,40 @@
             <div class="footer-web">youngscapital.pk</div>
           </div>
         </div>
+
       </div>
     </div>
 
+    <!-- ══ EDIT CARD ════════════════════════════════════════════ -->
     <div class="edit-card">
       <div class="edit-card-title">Daily Edit Fields</div>
 
-      <div class="fetch-tools">
-        <button class="fetch-btn" id="fetch-prices-btn" onclick="fetchLatestPrices()">Fetch Latest Prices</button>
-        <button class="fetch-btn" id="fetch-kse-btn" onclick="fetchKSEOnly()">Refresh KSE100 Only</button>
-        <button class="pdf-btn" id="export-pdf-btn" onclick="exportReportPDF()">Export PDF</button>
-        <button class="pdf-btn" id="screenshot-btn" onclick="downloadScreenshot()">Download Screenshot</button>
+      <!-- Google Sheets Info Note -->
+      <div class="sheets-info">
+        <strong>Google Sheets Integration</strong> — Data is saved to your connected Google Sheet via Apps Script automatically when you click "Save &amp; Sync to Sheet". 
+        To update the Apps Script endpoint, paste your Web App URL below and click Save URL.
+        <div class="sheets-url-row">
+          <input class="field-input sheets-url-input" id="sheets-url-input" placeholder="https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec" />
+          <button class="sheets-save-btn" onclick="saveSheetUrl()">Save URL</button>
+        </div>
       </div>
 
+      <!-- Tools row -->
+      <div class="fetch-tools">
+        <button class="fetch-btn" id="fetch-prices-btn" onclick="fetchLatestPrices()">Fetch Latest Prices</button>
+        <button class="fetch-btn" id="fetch-kse-btn"    onclick="fetchKSEOnly()">Refresh KSE100 Only</button>
+        <button class="pdf-btn"   id="export-pdf-btn"   onclick="exportReportPDF()">Export PDF</button>
+        <button class="pdf-btn"   id="screenshot-btn"   onclick="downloadScreenshot()">Download Screenshot</button>
+      </div>
+
+      <!-- Single symbol fetch -->
       <div class="single-fetch-row">
         <input class="field-input single-symbol-input" id="single-symbol-input" placeholder="e.g. SAZEW" />
         <button class="fetch-btn" id="fetch-single-btn" onclick="fetchSingleSymbolPrice()">Fetch Single Symbol</button>
         <div class="fetch-status" id="fetch-status"></div>
       </div>
 
+      <!-- Date / Ref -->
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
         <div>
           <label class="field-label">Date</label>
@@ -1075,13 +918,15 @@
         </div>
       </div>
 
+      <!-- KSE-100 stats -->
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px;">
-        <div><label class="field-label">Closing</label><input class="field-input" id="in-closing" placeholder="172,197"></div>
-        <div><label class="field-label">Target 1</label><input class="field-input" id="in-t1" placeholder="174,520"></div>
-        <div><label class="field-label">Target 2</label><input class="field-input" id="in-t2" placeholder="179,280"></div>
-        <div><label class="field-label">Stoploss</label><input class="field-input" id="in-sl" placeholder="169,230"></div>
+        <div><label class="field-label">Closing</label> <input class="field-input" id="in-closing" placeholder="172,197"></div>
+        <div><label class="field-label">Target 1</label><input class="field-input" id="in-t1"      placeholder="174,520"></div>
+        <div><label class="field-label">Target 2</label><input class="field-input" id="in-t2"      placeholder="179,280"></div>
+        <div><label class="field-label">Stoploss</label><input class="field-input" id="in-sl"      placeholder="169,230"></div>
       </div>
 
+      <!-- Market view -->
       <div style="margin-bottom:0">
         <label class="field-label">Market View</label>
         <textarea class="field-input" id="in-mv" rows="3" placeholder="The KSE-100 posted..."></textarea>
@@ -1089,13 +934,12 @@
 
       <hr class="divider">
 
-
+      <!-- ══ ADMIN RECORDS ══ -->
       <div class="admin-record-dashboard">
         <div class="admin-dashboard-title">Admin Records Dashboard</div>
-
         <div class="record-actions">
           <button class="update-btn" onclick="saveDailyRecord()">Save Today Record</button>
-          <button class="fetch-btn" onclick="renderRecordsDashboard()">Refresh Dashboard</button>
+          <button class="fetch-btn"  onclick="renderRecordsDashboard()">Refresh Dashboard</button>
           <button class="fetch-btn" id="fetch-missing-record-btn" onclick="updateMissingSelectedCloses()">Fetch Missing Closes</button>
           <div class="record-view-control">
             <span>View Date</span>
@@ -1105,18 +949,13 @@
           </div>
           <button class="pdf-btn" onclick="clearDailyRecords()">Clear Records</button>
         </div>
-
         <div class="record-summary" id="record-summary">No records saved yet.</div>
-
         <div class="record-table-wrap">
           <table class="record-table">
             <thead>
               <tr>
-                <th>Symbol</th>
-                <th>Selected Close</th>
-                <th>Previous Targets / SL</th>
-                <th>Status</th>
-                <th>Price Difference</th>
+                <th>Symbol</th><th>Selected Close</th>
+                <th>Previous Targets / SL</th><th>Status</th><th>Price Difference</th>
               </tr>
             </thead>
             <tbody id="record-dashboard-body"></tbody>
@@ -1124,9 +963,9 @@
         </div>
       </div>
 
+      <!-- ══ PERFORMANCE DASHBOARD ══ -->
       <div class="admin-record-dashboard performance-dashboard">
         <div class="admin-dashboard-title">Performance Dashboard</div>
-
         <div class="record-actions">
           <div class="record-view-control">
             <span>From</span>
@@ -1142,9 +981,7 @@
           </div>
           <button class="fetch-btn" onclick="renderPerformanceDashboard()">Analyze Performance</button>
         </div>
-
         <div class="record-summary" id="performance-summary">Save at least two records to view performance.</div>
-
         <div class="performance-metric-grid">
           <div class="performance-card">
             <div class="performance-card-label">Total Tracked Calls</div>
@@ -1172,19 +1009,12 @@
             <div class="performance-subnote">Not hit yet / close unavailable</div>
           </div>
         </div>
-
         <div class="record-table-wrap">
           <table class="record-table">
             <thead>
               <tr>
-                <th>Date</th>
-                <th>Total</th>
-                <th>Target 2</th>
-                <th>Target 1</th>
-                <th>Stoploss</th>
-                <th>In Range</th>
-                <th>Missing</th>
-                <th>Hit Rate</th>
+                <th>Date</th><th>Total</th><th>Target 2</th><th>Target 1</th>
+                <th>Stoploss</th><th>In Range</th><th>Missing</th><th>Hit Rate</th>
               </tr>
             </thead>
             <tbody id="performance-dashboard-body"></tbody>
@@ -1192,1057 +1022,1221 @@
         </div>
       </div>
 
+      <!-- ══ STOCK ROWS ══ -->
       <div class="stocks-edit-label">Stock Calls</div>
       <div id="stock-rows"></div>
-
       <button class="add-row-btn" onclick="addStockRow()">+ Add Stock Row</button>
 
-      <div style="display:flex;align-items:center;">
+      <!-- ══ SAVE BUTTONS ══ -->
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:8px;">
+        <button class="update-btn" id="save-sheet-btn" onclick="saveToSheet()">💾 Save &amp; Sync to Sheet</button>
+        <button class="sync-btn"   id="reload-sheet-btn" onclick="loadFromSheet()">↻ Reload from Sheet</button>
         <span class="saved-toast" id="saved-toast">✓ Saved!</span>
       </div>
-    </div>
 
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
   <script>
-    const API_BASE = 'https://yc-psx-api.onrender.com';
-
-    const defaultData = {
-      date: "Tuesday, 21 April 2026",
-      ref: "REP-084",
-      closing: "172,197",
-      t1: "174,520",
-      t2: "179,280",
-      sl: "169,230",
-      mv: "The KSE-100 posted a loss of 1,742 points, closing at 172,197. Support is expected at 169,226 — a break below targets the 50-DMA at 162,770. A break above 174,524 (yesterday's high) extends gains towards 179,280. Momentum indicators are mixed. Stay cautious on the higher side and wait for dips.",
-      stocks: [
-        { sym:"UBL", cls:"badge", strat:"Buy on dips", close:"415.84", t1:"421.00", t2:"430.00", sl:"397.00", note:"Post breakout consolidation likely", islamic:false },
-        { sym:"PAEL", cls:"badge", strat:"Buy on dips", close:"43.51", t1:"44.50", t2:"47.30", sl:"41.30", note:"Support at 50-DMA", islamic:false },
-        { sym:"OGDC", cls:"badge", strat:"Buy on dips", close:"326.65", t1:"331.00", t2:"336.20", sl:"316.10", note:"Upside to continue", islamic:false },
-        { sym:"ISL", cls:"badge", strat:"Buy on dips", close:"88.12", t1:"92.00", t2:"94.20", sl:"86.00", note:"Recovery trend intact", islamic:false }
-      ]
-    };
-
-    let data = JSON.parse(localStorage.getItem('yc_data') || JSON.stringify(defaultData));
-
-    function formatDateDisplay(value) {
-      if (!value) return '';
-      const date = new Date(value + 'T00:00:00');
-      return date.toLocaleDateString('en-GB', {
-        weekday: 'long',
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric'
-      });
-    }
-
-    function formatDateInputValue(displayText) {
-      if (!displayText) return '';
-      const parsed = new Date(displayText);
-      if (Number.isNaN(parsed.getTime())) return '';
-      return parsed.toISOString().split('T')[0];
-    }
-
-    function normalizeStock(s) {
-      return {
-        sym: (s.sym || '').toUpperCase().trim(),
-        cls: s.cls || 'badge',
-        strat: s.strat || stratLabel(s.cls || 'badge'),
-        close: s.close || '',
-        t1: s.t1 || '',
-        t2: s.t2 || '',
-        sl: s.sl || '',
-        note: s.note || '',
-        islamic: !!s.islamic
-      };
-    }
-
-    function stratLabel(cls) {
-      if (cls.includes('sell')) return 'Sell';
-      if (cls.includes('hold')) return 'Hold';
-      return 'Buy on dips';
-    }
-
-    function setFetchStatus(message, type = '') {
-      const el = document.getElementById('fetch-status');
-      el.textContent = message;
-      el.className = `fetch-status ${type}`.trim();
-    }
-
-    function touchDateTimeStamp() {
-      const now = new Date();
-      document.getElementById('in-date').value = now.toISOString().split('T')[0];
-    }
-
-    async function callApi(path) {
-      const response = await fetch(`${API_BASE}${path}`, { cache: 'no-store' });
-      if (!response.ok) {
-        const text = await response.text();
-        throw new Error(text || `Request failed: ${response.status}`);
-      }
-      return await response.json();
-    }
-
-    async function fetchKSEOnly() {
-      const btn = document.getElementById('fetch-kse-btn');
-      btn.disabled = true;
-      setFetchStatus('Fetching KSE100...', '');
-
-      try {
-        const result = await callApi('/api/psx/kse100');
-        document.getElementById('in-closing').value = result.close;
-        touchDateTimeStamp();
-        updateReport(false);
-        setFetchStatus('KSE100 refreshed successfully.', 'success');
-      } catch (error) {
-        console.error(error);
-        setFetchStatus('Could not fetch KSE100 closing.', 'error');
-      } finally {
-        btn.disabled = false;
-      }
-    }
-
-    async function fetchLatestPrices() {
-      const button = document.getElementById('fetch-prices-btn');
-      const rows = Array.from(document.querySelectorAll('.stock-row'));
-      const symbols = rows
-        .map(row => row.querySelector('.sr-sym').value.trim().toUpperCase())
-        .filter(Boolean);
-
-      if (!symbols.length) {
-        setFetchStatus('Add at least one symbol first.', 'error');
-        return;
-      }
-
-      button.disabled = true;
-      setFetchStatus('Fetching latest KSE100 and stock closes...', '');
-
-      try {
-        const result = await callApi(`/api/psx/prices?symbols=${encodeURIComponent(symbols.join(','))}`);
-
-        if (result.kse100Close) {
-          document.getElementById('in-closing').value = result.kse100Close;
-        }
-
-        rows.forEach(row => {
-          const sym = row.querySelector('.sr-sym').value.trim().toUpperCase();
-          if (result.symbols && result.symbols[sym]) {
-            row.querySelector('.sr-close').value = result.symbols[sym];
-            const symbolInput = row.querySelector('.sr-sym');
-            if (symbolInput) symbolInput.dataset.lastSymbol = sym;
-          }
-        });
-
-        touchDateTimeStamp();
-        updateReport(false);
-
-        if (result.failed && result.failed.length) {
-          setFetchStatus(`Fetched most prices. Failed: ${result.failed.join(', ')}`, 'error');
-        } else {
-          setFetchStatus('Latest KSE100 and stock closes fetched successfully.', 'success');
-        }
-      } catch (error) {
-        console.error(error);
-        setFetchStatus('Price fetch failed.', 'error');
-      } finally {
-        button.disabled = false;
-      }
-    }
-
-    async function fetchSingleSymbolPrice() {
-      const btn = document.getElementById('fetch-single-btn');
-      const input = document.getElementById('single-symbol-input');
-      const symbol = input.value.trim().toUpperCase();
-
-      if (!symbol) {
-        setFetchStatus('Enter a symbol first, e.g. SAZEW.', 'error');
-        return;
-      }
-
-      btn.disabled = true;
-      setFetchStatus(`Fetching ${symbol}...`, '');
-
-      try {
-        const result = await callApi(`/api/psx/prices?symbols=${encodeURIComponent(symbol)}`);
-        const close = result.symbols && result.symbols[symbol];
-
-        if (!close) {
-          setFetchStatus(`Could not fetch ${symbol}.`, 'error');
-          return;
-        }
-
-        let matched = false;
-        document.querySelectorAll('.stock-row').forEach(row => {
-          const rowSymbol = row.querySelector('.sr-sym').value.trim().toUpperCase();
-          if (rowSymbol === symbol) {
-            row.querySelector('.sr-close').value = close;
-            row.querySelector('.sr-sym').dataset.lastSymbol = symbol;
-            matched = true;
-          }
-        });
-
-        if (matched) {
-          touchDateTimeStamp();
-          updateReport(false);
-          setFetchStatus(`${symbol} close updated successfully.`, 'success');
-        } else {
-          setFetchStatus(`${symbol} close is ${close}. Symbol not found in rows.`, 'success');
-        }
-      } catch (error) {
-        console.error(error);
-        setFetchStatus(`Failed to fetch ${symbol}.`, 'error');
-      } finally {
-        btn.disabled = false;
-      }
-    }
-
-    async function autofillCloseForRow(symbolInput) {
-      const symbol = symbolInput.value.trim().toUpperCase();
-      const previousSymbol = symbolInput.dataset.lastSymbol || '';
-
-      if (!symbol) return;
-      if (symbol === previousSymbol) return;
-
-      const row = symbolInput.closest('.stock-row');
-      if (!row) return;
-
-      const closeInput = row.querySelector('.sr-close');
-      if (!closeInput) return;
-
-      try {
-        symbolInput.dataset.lastSymbol = symbol;
-        setFetchStatus(`Fetching ${symbol}...`, '');
-
-        const result = await callApi(`/api/psx/prices?symbols=${encodeURIComponent(symbol)}`);
-        const close = result.symbols && result.symbols[symbol];
-
-        if (close) {
-          closeInput.value = close;
-          touchDateTimeStamp();
-          updateReport(false);
-          setFetchStatus(`${symbol} close filled automatically.`, 'success');
-        } else {
-          setFetchStatus(`Could not fetch ${symbol}.`, 'error');
-        }
-      } catch (error) {
-        console.error(error);
-        setFetchStatus(`Failed to fetch ${symbol}.`, 'error');
-      }
-    }
-
-    function attachSymbolAutoFetch(input) {
-      if (!input) return;
-      input.dataset.lastSymbol = input.value.trim().toUpperCase();
-      input.addEventListener('blur', async function () {
-        await autofillCloseForRow(this);
-      });
-    }
-
-    function exportReportPDF() {
-      updateReport(false);
-
-      const reportHtml = document.getElementById('report-card').outerHTML;
-      const styles = Array.from(document.querySelectorAll('style, link[rel="stylesheet"]'))
-        .map(el => el.outerHTML)
-        .join('\n');
-
-      const printWindow = window.open('', '_blank', 'width=1400,height=900');
-      if (!printWindow) {
-        setFetchStatus('Popup blocked. Please allow popups for PDF export.', 'error');
-        return;
-      }
-
-      printWindow.document.open();
-      printWindow.document.write(`
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-          <meta charset="UTF-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <title>Youngs Capital Report PDF</title>
-          ${styles}
-          <style>
-            body {
-              background: #ffffff !important;
-              padding: 24px !important;
-              margin: 0 !important;
-            }
-            .wrapper,
-            .report-shell {
-              max-width: 100% !important;
-              margin: 0 !important;
-            }
-            .report-shell {
-              box-shadow: none !important;
-            }
-            @page {
-              size: A4 landscape;
-              margin: 10mm;
-            }
-            @media print {
-              body {
-                padding: 0 !important;
-                background: #ffffff !important;
-              }
-              .report-shell {
-                break-inside: avoid;
-              }
-            }
-          </style>
-        </head>
-        <body>
-          ${reportHtml}
-        </body>
-        </html>
-      `);
-      printWindow.document.close();
-
-      printWindow.onload = () => {
-        setTimeout(() => {
-          printWindow.focus();
-          printWindow.print();
-        }, 500);
-      };
-    }
-
-    async function downloadScreenshot() {
-      updateReport(false);
-
-      const reportCard = document.getElementById('report-card');
-      const button = document.getElementById('screenshot-btn');
-
-      if (!reportCard) {
-        setFetchStatus('Report card not found.', 'error');
-        return;
-      }
-
-      try {
-        button.disabled = true;
-        setFetchStatus('Generating screenshot...', '');
-
-        const canvas = await html2canvas(reportCard, {
-          scale: 2,
-          useCORS: true,
-          backgroundColor: null
-        });
-
-        const link = document.createElement('a');
-        const ref = document.getElementById('in-ref').value || 'report';
-        link.download = `${ref}-screenshot.png`;
-        link.href = canvas.toDataURL('image/png');
-        link.click();
-
-        setFetchStatus('Screenshot downloaded successfully.', 'success');
-      } catch (error) {
-        console.error(error);
-        setFetchStatus('Failed to generate screenshot.', 'error');
-      } finally {
-        button.disabled = false;
-      }
-    }
-
-    function addStockRow(d) {
-      d = normalizeStock(d || {});
-      const div = document.createElement('div');
-      div.className = 'stock-row';
-      div.innerHTML = `
-        <input class="field-input sr-sym" style="font-size:13px;padding:8px 10px" value="${d.sym}" placeholder="Symbol">
-        <select class="field-input sr-cls" style="font-size:12px;padding:8px 10px">
-          <option value="badge" ${d.cls==='badge'?'selected':''}>Buy on dips</option>
-          <option value="badge sell" ${d.cls==='badge sell'?'selected':''}>Sell</option>
-          <option value="badge hold" ${d.cls==='badge hold'?'selected':''}>Hold</option>
-        </select>
-        <input class="field-input sr-close" style="font-size:13px;padding:8px 10px" value="${d.close}" placeholder="Close">
-        <input class="field-input sr-t1" style="font-size:13px;padding:8px 10px" value="${d.t1}" placeholder="T1">
-        <input class="field-input sr-t2" style="font-size:13px;padding:8px 10px" value="${d.t2}" placeholder="T2">
-        <input class="field-input sr-sl" style="font-size:13px;padding:8px 10px" value="${d.sl}" placeholder="SL">
-        <input class="field-input sr-note" style="font-size:13px;padding:8px 10px" value="${d.note}" placeholder="Analyst note">
-        <label class="checkbox-wrap">
-          <input type="checkbox" class="sr-islamic" ${d.islamic ? 'checked' : ''}>
-          <span>Islamic</span>
-        </label>
-        <button class="del-btn" onclick="this.parentElement.remove()">×</button>
-      `;
-      document.getElementById('stock-rows').appendChild(div);
-      attachSymbolAutoFetch(div.querySelector('.sr-sym'));
-    }
-
-    function populateForm() {
-      document.getElementById('in-date').value = formatDateInputValue(data.date);
-      document.getElementById('in-ref').value = data.ref;
-      document.getElementById('in-closing').value = data.closing;
-      document.getElementById('in-t1').value = data.t1;
-      document.getElementById('in-t2').value = data.t2;
-      document.getElementById('in-sl').value = data.sl;
-      document.getElementById('in-mv').value = data.mv;
-      document.getElementById('stock-rows').innerHTML = '';
-      data.stocks.map(normalizeStock).forEach(s => addStockRow(s));
-    }
-
-    function renderReport() {
-      document.getElementById('disp-date').textContent = data.date;
-      document.getElementById('disp-ref').textContent = data.ref;
-      document.getElementById('disp-closing').textContent = data.closing;
-      document.getElementById('disp-t1').textContent = data.t1;
-      document.getElementById('disp-t2').textContent = data.t2;
-      document.getElementById('disp-sl').textContent = data.sl;
-      document.getElementById('disp-mv').innerHTML = '<strong>Market view:</strong> ' + data.mv;
-
-      const tbody = document.getElementById('disp-stocks');
-      tbody.innerHTML = '';
-
-      data.stocks.map(normalizeStock).forEach(s => {
-        const islamicBadge = s.islamic
-          ? `<span class="islamic-badge" title="Islamic stock">🕌</span>`
-          : '';
-
-        tbody.innerHTML += `
-          <tr>
-            <td class="symbol-cell">
-              <div class="symbol-wrap">
-                <span class="symbol">${s.sym}</span>
-                ${islamicBadge}
-              </div>
-            </td>
-            <td><span class="${s.cls}">${s.strat}</span></td>
-            <td class="num">${s.close}</td>
-            <td class="tgt">${s.t1}</td>
-            <td class="tgt">${s.t2}</td>
-            <td class="stop">${s.sl}</td>
-            <td class="note">${s.note}</td>
-          </tr>
-        `;
-      });
-    }
-
-    function updateReport(showToast = true) {
-      data.date = formatDateDisplay(document.getElementById('in-date').value);
-      data.ref = document.getElementById('in-ref').value;
-      data.closing = document.getElementById('in-closing').value;
-      data.t1 = document.getElementById('in-t1').value;
-      data.t2 = document.getElementById('in-t2').value;
-      data.sl = document.getElementById('in-sl').value;
-      data.mv = document.getElementById('in-mv').value;
-      data.stocks = [];
-
-      document.querySelectorAll('.stock-row').forEach(row => {
-        const cls = row.querySelector('.sr-cls').value;
-        data.stocks.push({
-          sym: row.querySelector('.sr-sym').value,
-          cls,
-          strat: stratLabel(cls),
-          close: row.querySelector('.sr-close').value,
-          t1: row.querySelector('.sr-t1').value,
-          t2: row.querySelector('.sr-t2').value,
-          sl: row.querySelector('.sr-sl').value,
-          note: row.querySelector('.sr-note').value,
-          islamic: row.querySelector('.sr-islamic').checked
-        });
-      });
-
-      data.stocks = data.stocks.map(normalizeStock);
-
-      localStorage.setItem('yc_data', JSON.stringify(data));
-      renderReport();
-
-      if (showToast) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        const toast = document.getElementById('saved-toast');
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 2500);
-      }
-    }
-
-
-    const RECORDS_KEY = 'yc_daily_report_records';
-
-    function cleanNumber(value) {
-      const cleaned = String(value || '').replace(/,/g, '').trim();
-      const num = Number(cleaned);
-      return Number.isFinite(num) ? num : null;
-    }
-
-    function formatSignedNumber(value) {
-      if (value === null || !Number.isFinite(value)) return '-';
-      const abs = Math.abs(value).toLocaleString('en-US', {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      });
-      if (value > 0) return '+' + abs;
-      if (value < 0) return '-' + abs;
-      return '0.00';
-    }
-
-    function getRecordKey(record) {
-      return record.dateInput || record.date || String(record.id || '');
-    }
-
-    function getCurrentRecordFromForm() {
-      const recordDate = formatDateDisplay(document.getElementById('in-date').value);
-      const record = {
-        id: Date.now(),
-        date: recordDate || 'No Date',
-        dateInput: document.getElementById('in-date').value,
-        savedAt: new Date().toISOString(),
-        kse100: {
-          closing: document.getElementById('in-closing').value,
-          target1: document.getElementById('in-t1').value,
-          target2: document.getElementById('in-t2').value,
-          stoploss: document.getElementById('in-sl').value
-        },
-        stocks: []
-      };
-
-      document.querySelectorAll('.stock-row').forEach(row => {
-        const cls = row.querySelector('.sr-cls').value;
-        const symbol = row.querySelector('.sr-sym').value.trim().toUpperCase();
-        if (!symbol) return;
-
-        record.stocks.push({
-          symbol,
-          strategy: stratLabel(cls),
-          close: row.querySelector('.sr-close').value,
-          target1: row.querySelector('.sr-t1').value,
-          target2: row.querySelector('.sr-t2').value,
-          stoploss: row.querySelector('.sr-sl').value,
-          note: row.querySelector('.sr-note').value,
-          islamic: row.querySelector('.sr-islamic').checked
-        });
-      });
-
-      return record;
-    }
-
-    function loadRecords() {
-      try { return JSON.parse(localStorage.getItem(RECORDS_KEY) || '[]'); }
-      catch (error) { console.error(error); return []; }
-    }
-
-    function saveRecords(records) {
-      localStorage.setItem(RECORDS_KEY, JSON.stringify(records));
-    }
-
-    function showRecordToast(message) {
-      const toast = document.getElementById('saved-toast');
-      toast.textContent = message;
-      toast.classList.add('show');
-      setTimeout(() => {
-        toast.classList.remove('show');
-        toast.textContent = '✓ Saved!';
-      }, 2500);
-    }
-
-    function saveDailyRecord() {
-      updateReport(false);
-      const newRecord = getCurrentRecordFromForm();
-      let records = loadRecords();
-
-      const existingIndex = records.findIndex(r => getRecordKey(r) === getRecordKey(newRecord));
-      if (existingIndex >= 0) records[existingIndex] = newRecord;
-      else records.push(newRecord);
-
-      records.sort((a, b) => {
-        const aTime = new Date(a.dateInput || a.savedAt).getTime();
-        const bTime = new Date(b.dateInput || b.savedAt).getTime();
-        return aTime - bTime;
-      });
-
-      saveRecords(records);
-      renderRecordsDashboard(getRecordKey(newRecord));
-      renderPerformanceDashboard();
-      showRecordToast('✓ Today record saved!');
-    }
-
-    function clearDailyRecords() {
-      const ok = confirm('Clear all saved admin records? This will not affect the current report.');
-      if (!ok) return;
-      localStorage.removeItem(RECORDS_KEY);
-      renderRecordsDashboard();
-      renderPerformanceDashboard();
-      showRecordToast('✓ Records cleared!');
-    }
-
-    function formatChange(latest, previous) {
-      const latestNum = cleanNumber(latest);
-      const previousNum = cleanNumber(previous);
-
-      if (latestNum === null || previousNum === null || previousNum === 0) {
-        return { text: '-', cls: 'record-flat' };
-      }
-
-      const diff = latestNum - previousNum;
-      const pct = (diff / previousNum) * 100;
-      const diffText = diff.toLocaleString('en-US', {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      });
-
-      if (diff > 0) return { text: `+${diffText} / +${pct.toFixed(2)}%`, cls: 'record-up' };
-      if (diff < 0) return { text: `${diffText} / ${pct.toFixed(2)}%`, cls: 'record-down' };
-      return { text: 'No change', cls: 'record-flat' };
-    }
-
-    function addDashboardRow(label, previousDate, previousValue, latestDate, latestValue) {
-      const tbody = document.getElementById('record-dashboard-body');
-      if (!tbody) return;
-
-      const change = formatChange(latestValue, previousValue);
-      tbody.innerHTML += `
-        <tr>
-          <td>${label}</td>
-          <td>${previousDate || '-'}</td>
-          <td>${previousValue || '-'}</td>
-          <td>${latestDate || '-'}</td>
-          <td>${latestValue || '-'}</td>
-          <td class="${change.cls}">${change.text}</td>
-        </tr>
-      `;
-    }
-
-function populateRecordDateSelect(selectedKey = '') {
-  const select = document.getElementById('record-date-select');
-  if (!select) return;
-
-  const records = loadRecords();
-  const currentValue = selectedKey || select.value;
-
-  select.innerHTML = '<option value="">Latest Saved Date</option>';
-  records.slice().reverse().forEach(record => {
-    const key = getRecordKey(record);
-    const option = document.createElement('option');
-    option.value = key;
-    option.textContent = record.date;
-    if (key === currentValue) option.selected = true;
-    select.appendChild(option);
-  });
-}
-
-function buildPriceDifferenceText(status, close, t1, t2, sl) {
-  if (close === null) return '-';
-
-  if (status === 'Target 2 Hit') {
-    return '<div class="record-diff-note">Above T2: ' + formatSignedNumber(close - t2) + '</div>';
+  // ════════════════════════════════════════════════════════════
+  //  CONFIG
+  // ════════════════════════════════════════════════════════════
+  const DEFAULT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbymh6HFsLSmK7IHa-RPu9QVXDuUQM8xo3Q1jJxV94_Qw3WXGempk1rHvpZIn3x3GZQ2/exec";
+  const API_BASE = 'https://yc-psx-api.onrender.com';
+
+  // Load saved sheet URL or fall back to default
+  function getWebAppUrl() {
+    return localStorage.getItem('yc_sheets_url') || DEFAULT_WEB_APP_URL;
   }
 
-  if (status === 'Target 1 Hit') {
-    return '<div class="record-diff-note">Above T1: ' + formatSignedNumber(close - t1) + '<br>To T2: ' + formatSignedNumber(close - t2) + '</div>';
+  function saveSheetUrl() {
+    const val = document.getElementById('sheets-url-input').value.trim();
+    if (!val) { setFetchStatus('Please enter a valid Apps Script URL.', 'error'); return; }
+    localStorage.setItem('yc_sheets_url', val);
+    setFetchStatus('Google Sheets URL saved successfully.', 'success');
+    showSavedToast('✓ Sheet URL saved!');
   }
 
-  if (status === 'Stoploss Hit') {
-    return '<div class="record-diff-note">Below SL: ' + formatSignedNumber(close - sl) + '</div>';
-  }
-
-  return '<div class="record-diff-note">To T1: ' + formatSignedNumber(close - t1) + '<br>Above SL: ' + formatSignedNumber(close - sl) + '</div>';
-}
-
-function getPreviousAndSelectedRecords(selectedKey = '') {
-  const records = loadRecords();
-  if (records.length < 2) return { records, previous: null, selected: null, selectedIndex: -1 };
-
-  const keyToUse = selectedKey || document.getElementById('record-date-select')?.value || getRecordKey(records[records.length - 1]);
-  let selectedIndex = records.findIndex(r => getRecordKey(r) === keyToUse);
-  if (selectedIndex < 0) selectedIndex = records.length - 1;
-
-  if (selectedIndex === 0) {
-    return { records, previous: null, selected: records[0], selectedIndex };
-  }
-
-  return {
-    records,
-    previous: records[selectedIndex - 1],
-    selected: records[selectedIndex],
-    selectedIndex
+  // ════════════════════════════════════════════════════════════
+  //  BACKGROUND THEME
+  // ════════════════════════════════════════════════════════════
+  const THEMES = {
+    default:  { start: '#04070d', end: '#08101b', c1: 'rgba(91,136,255,0.08)',   c2: 'rgba(102,200,138,0.06)' },
+    midnight: { start: '#0a0015', end: '#110033', c1: 'rgba(140,91,255,0.10)',   c2: 'rgba(91,136,255,0.06)'  },
+    emerald:  { start: '#021208', end: '#041f0e', c1: 'rgba(102,200,138,0.10)',  c2: 'rgba(91,255,136,0.06)'  },
+    slate:    { start: '#0d1117', end: '#1c2333', c1: 'rgba(91,136,255,0.10)',   c2: 'rgba(100,150,255,0.06)' },
+    ember:    { start: '#120600', end: '#1f0e00', c1: 'rgba(255,120,50,0.08)',   c2: 'rgba(214,174,82,0.06)'  },
+    charcoal: { start: '#111214', end: '#1e2028', c1: 'rgba(200,200,220,0.05)',  c2: 'rgba(91,136,255,0.04)'  },
   };
-}
 
-function findStockInRecord(record, symbol) {
-  if (!record || !Array.isArray(record.stocks)) return null;
-  return record.stocks.find(s => String(s.symbol || '').toUpperCase() === String(symbol || '').toUpperCase()) || null;
-}
-
-function addTargetTrackingRow(label, selectedClose, prevT1, prevT2, prevSL, options = {}) {
-  const tbody = document.getElementById('record-dashboard-body');
-  if (!tbody) return;
-
-  const close = cleanNumber(selectedClose);
-  const t1 = cleanNumber(prevT1);
-  const t2 = cleanNumber(prevT2);
-  const sl = cleanNumber(prevSL);
-
-  let status = 'Neutral';
-  let statusClass = 'record-flat';
-
-  if (close === null) {
-    status = 'Missing Close';
-    statusClass = 'record-missing';
-  } else if (t1 === null || t2 === null || sl === null) {
-    status = 'Missing Targets';
-    statusClass = 'record-missing';
-  } else if (close >= t2) {
-    status = 'Target 2 Hit';
-    statusClass = 'record-up';
-  } else if (close >= t1) {
-    status = 'Target 1 Hit';
-    statusClass = 'record-up';
-  } else if (close <= sl) {
-    status = 'Stoploss Hit';
-    statusClass = 'record-down';
-  } else {
-    status = 'In Range';
-    statusClass = 'record-flat';
+  function applyTheme(name, btn) {
+    const t = THEMES[name];
+    if (!t) return;
+    document.documentElement.style.setProperty('--bg-start', t.start);
+    document.documentElement.style.setProperty('--bg-end', t.end);
+    document.documentElement.style.setProperty('--bg-color-1', t.c1);
+    document.documentElement.style.setProperty('--bg-color-2', t.c2);
+    // Update active button state
+    document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+    // Save preference
+    localStorage.setItem('yc_bg_theme', name);
+    document.getElementById('custom-bg-color').value = t.start;
   }
 
-  const progressToT1 = close !== null && t1 ? ((close / t1) * 100).toFixed(1) + '%' : '-';
-  const diffText = close === null
-    ? '<div class="record-diff-note">Click Fetch Missing Closes to track this previous call.</div>'
-    : buildPriceDifferenceText(status, close, t1, t2, sl);
-
-  const sourceTag = options.autoTracked
-    ? '<span class="record-tag">Auto Tracked</span>'
-    : '';
-
-  tbody.innerHTML += `
-    <tr>
-      <td>${label}${sourceTag}</td>
-      <td>Close: ${selectedClose || '-'}</td>
-      <td>T1: ${prevT1 || '-'} | T2: ${prevT2 || '-'} | SL: ${prevSL || '-'}</td>
-      <td class="${statusClass}">${status} (${progressToT1})</td>
-      <td>${diffText}</td>
-    </tr>
-  `;
-}
-
-async function updateMissingSelectedCloses() {
-  const button = document.getElementById('fetch-missing-record-btn');
-  const selectedKey = document.getElementById('record-date-select')?.value || '';
-  const { records, previous, selected, selectedIndex } = getPreviousAndSelectedRecords(selectedKey);
-
-  if (!previous || !selected || selectedIndex <= 0) {
-    setFetchStatus('Select a saved date that has a previous record first.', 'error');
-    return;
+  function applyCustomColor(hex) {
+    // Darken slightly for end color
+    const end = shadeColor(hex, -15);
+    document.documentElement.style.setProperty('--bg-start', hex);
+    document.documentElement.style.setProperty('--bg-end', end);
+    // Remove all active states since this is custom
+    document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+    localStorage.setItem('yc_bg_theme', 'custom');
+    localStorage.setItem('yc_bg_custom', hex);
   }
 
-  const missingSymbols = [];
-
-  previous.stocks.forEach(previousStock => {
-    const symbol = String(previousStock.symbol || '').toUpperCase();
-    if (!symbol) return;
-
-    const selectedStock = findStockInRecord(selected, symbol);
-    if (!selectedStock || cleanNumber(selectedStock.close) === null) {
-      missingSymbols.push(symbol);
-    }
-  });
-
-  const uniqueMissingSymbols = [...new Set(missingSymbols)];
-
-  if (!uniqueMissingSymbols.length) {
-    setFetchStatus('No missing closes. All previous calls are already tracked.', 'success');
-    renderRecordsDashboard(getRecordKey(selected));
-    return;
+  function shadeColor(hex, percent) {
+    const num = parseInt(hex.replace('#',''), 16);
+    const r = Math.max(0, Math.min(255, (num >> 16) + percent));
+    const g = Math.max(0, Math.min(255, ((num >> 8) & 0x00FF) + percent));
+    const b = Math.max(0, Math.min(255, (num & 0x0000FF) + percent));
+    return '#' + ((r << 16) | (g << 8) | b).toString(16).padStart(6, '0');
   }
 
-  try {
-    if (button) button.disabled = true;
-    setFetchStatus(`Fetching missing closes: ${uniqueMissingSymbols.join(', ')}`, '');
-
-    const result = await callApi(`/api/psx/prices?symbols=${encodeURIComponent(uniqueMissingSymbols.join(','))}`);
-    const failed = [];
-
-    uniqueMissingSymbols.forEach(symbol => {
-      const close = result.symbols && result.symbols[symbol];
-      const previousStock = findStockInRecord(previous, symbol);
-
-      if (!close || !previousStock) {
-        failed.push(symbol);
-        return;
+  function loadSavedTheme() {
+    const saved = localStorage.getItem('yc_bg_theme');
+    if (!saved || saved === 'default') {
+      // still check card mode
+    } else if (saved === 'custom') {
+      const hex = localStorage.getItem('yc_bg_custom');
+      if (hex) {
+        applyCustomColor(hex);
+        document.getElementById('custom-bg-color').value = hex;
       }
+    } else if (THEMES[saved]) {
+      const btn = document.querySelector(`[data-theme="${saved}"]`);
+      applyTheme(saved, btn);
+    }
+    // Restore card mode
+    const cardMode = localStorage.getItem('yc_card_mode') || 'dark';
+    setCardMode(cardMode);
+  }
 
-      let selectedStock = findStockInRecord(selected, symbol);
+  // ── Report Card Light / Dark Mode ──────────────────────────
+  function setCardMode(mode) {
+    const shell = document.getElementById('report-shell');
+    const darkBtn  = document.getElementById('card-dark-btn');
+    const lightBtn = document.getElementById('card-light-btn');
 
-      if (selectedStock) {
-        selectedStock.close = close;
-        selectedStock.autoTracked = true;
-      } else {
-        selected.stocks.push({
-          symbol,
-          strategy: previousStock.strategy || 'Tracked',
-          close,
-          target1: previousStock.target1,
-          target2: previousStock.target2,
-          stoploss: previousStock.stoploss,
-          note: 'Auto-tracked from previous record',
-          islamic: !!previousStock.islamic,
-          autoTracked: true
+    if (mode === 'light') {
+      shell.classList.add('light-mode');
+      if (darkBtn)  darkBtn.classList.remove('active');
+      if (lightBtn) lightBtn.classList.add('active');
+    } else {
+      shell.classList.remove('light-mode');
+      if (darkBtn)  darkBtn.classList.add('active');
+      if (lightBtn) lightBtn.classList.remove('active');
+    }
+    localStorage.setItem('yc_card_mode', mode);
+  }
+
+  // ════════════════════════════════════════════════════════════
+  //  DEFAULT DATA
+  // ════════════════════════════════════════════════════════════
+  const defaultData = {
+    date: "Tuesday, 21 April 2026",
+    ref: "REP-084",
+    closing: "172,197",
+    t1: "174,520",
+    t2: "179,280",
+    sl: "169,230",
+    mv: "The KSE-100 posted a loss of 1,742 points, closing at 172,197. Support is expected at 169,226 — a break below targets the 50-DMA at 162,770. A break above 174,524 (yesterday's high) extends gains towards 179,280. Momentum indicators are mixed. Stay cautious on the higher side and wait for dips.",
+    stocks: [
+      { sym:"UBL",  cls:"badge", strat:"Buy on dips", close:"415.84", t1:"421.00", t2:"430.00", sl:"397.00", note:"Post breakout consolidation likely", islamic:false },
+      { sym:"PAEL", cls:"badge", strat:"Buy on dips", close:"43.51",  t1:"44.50",  t2:"47.30",  sl:"41.30",  note:"Support at 50-DMA", islamic:false },
+      { sym:"OGDC", cls:"badge", strat:"Buy on dips", close:"326.65", t1:"331.00", t2:"336.20", sl:"316.10", note:"Upside to continue", islamic:false },
+      { sym:"ISL",  cls:"badge", strat:"Buy on dips", close:"88.12",  t1:"92.00",  t2:"94.20",  sl:"86.00",  note:"Recovery trend intact", islamic:false }
+    ]
+  };
+
+  let data = JSON.parse(localStorage.getItem('yc_data') || JSON.stringify(defaultData));
+
+  // ════════════════════════════════════════════════════════════
+  //  SYNC STATUS UI
+  // ════════════════════════════════════════════════════════════
+  function setSyncStatus(state, label) {
+    const dot = document.getElementById('sync-dot');
+    const lbl = document.getElementById('sync-label');
+    dot.className = 'sync-dot ' + (state || '');
+    lbl.textContent = label || '';
+  }
+
+  // ════════════════════════════════════════════════════════════
+  //  GOOGLE SHEETS LAYER
+  // ════════════════════════════════════════════════════════════
+  async function sheetGet(action) {
+    const url  = getWebAppUrl();
+    const res  = await fetch(`${url}?action=${action}`, { cache: 'no-store' });
+    const json = await res.json();
+    if (json.status !== 'ok') throw new Error(json.message || 'Sheet GET failed');
+    return json.data;
+  }
+
+  async function sheetPost(action, payload) {
+    const url  = getWebAppUrl();
+    const res  = await fetch(url, {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ action, data: payload }),
+    });
+    const json = await res.json();
+    if (json.status !== 'ok') throw new Error(json.message || 'Sheet POST failed');
+    return json;
+  }
+
+  // Convert flat Records Log rows (one per stock) → local records array
+  function sheetsRecordsToLocal(rows) {
+    const byDate = {};
+    rows.forEach(r => {
+      if (!byDate[r.date]) {
+        byDate[r.date] = {
+          id: Date.now() + Math.random(),
+          date: r.date,
+          dateInput: '',
+          savedAt: new Date().toISOString(),
+          kse100: { closing: r.kseClosing, target1: r.kseTarget1, target2: r.kseTarget2, stoploss: r.kseStoploss },
+          stocks: [],
+        };
+      }
+      if (r.symbol) {
+        byDate[r.date].stocks.push({
+          symbol: r.symbol, strategy: r.strategy,
+          close: r.stockClose, target1: r.stockT1,
+          target2: r.stockT2, stoploss: r.stockSL, note: r.note,
         });
       }
     });
-
-    selected.savedAt = new Date().toISOString();
-    records[selectedIndex] = selected;
-    saveRecords(records);
-    renderRecordsDashboard(getRecordKey(selected));
-    renderPerformanceDashboard();
-
-    if (failed.length) {
-      setFetchStatus(`Missing closes updated. Failed: ${failed.join(', ')}`, 'error');
-    } else {
-      setFetchStatus('Missing closes updated successfully.', 'success');
-    }
-  } catch (error) {
-    console.error(error);
-    setFetchStatus('Failed to fetch missing closes.', 'error');
-  } finally {
-    if (button) button.disabled = false;
-  }
-}
-    
-function renderRecordsDashboard(selectedKey = '') {
-  const records = loadRecords();
-  const summary = document.getElementById('record-summary');
-  const tbody = document.getElementById('record-dashboard-body');
-
-  if (!summary || !tbody) return;
-
-  populateRecordDateSelect(selectedKey);
-  tbody.innerHTML = '';
-
-  if (records.length === 0) {
-    summary.textContent = 'No records saved yet.';
-    return;
+    return Object.values(byDate).sort((a, b) => new Date(a.savedAt) - new Date(b.savedAt));
   }
 
-  if (records.length === 1) {
-    summary.textContent = `1 record saved for ${records[0].date}. Save another day to compare selected close with previous targets.`;
-    return;
+  function stratToCls(strategy) {
+    if (!strategy) return 'badge';
+    const s = strategy.toLowerCase();
+    if (s.includes('sell')) return 'badge sell';
+    if (s.includes('hold')) return 'badge hold';
+    return 'badge';
   }
 
-  const { previous, selected, selectedIndex } = getPreviousAndSelectedRecords(selectedKey);
+  // ── LOAD FROM SHEET ──────────────────────────────────────────
+  async function loadFromSheet() {
+    setSyncStatus('busy', 'Loading from Sheet…');
+    setFetchStatus('Loading from Google Sheets…', '');
 
-  if (!selected) {
-    summary.textContent = 'No selected record found.';
-    return;
-  }
+    const reloadBtn = document.getElementById('reload-sheet-btn');
+    if (reloadBtn) reloadBtn.disabled = true;
 
-  const select = document.getElementById('record-date-select');
-  if (select) select.value = getRecordKey(selected);
+    try {
+      const snap = await sheetGet('all');
 
-  if (selectedIndex === 0 || !previous) {
-    summary.textContent = `${selected.date} is the first saved record. No previous date available for target tracking.`;
-    return;
-  }
+      data.date    = snap.report.date;
+      data.ref     = snap.report.ref;
+      data.closing = snap.report.kse.closing;
+      data.t1      = snap.report.kse.target1;
+      data.t2      = snap.report.kse.target2;
+      data.sl      = snap.report.kse.stoploss;
+      data.mv      = snap.report.marketView;
 
-  const previousSymbols = previous.stocks.map(s => s.symbol).filter(Boolean);
-  const missingCount = previousSymbols.filter(symbol => {
-    const selectedStock = findStockInRecord(selected, symbol);
-    return !selectedStock || cleanNumber(selectedStock.close) === null;
-  }).length;
+      data.stocks = (snap.stocks || []).map(s => normalizeStock({
+        sym:     s.symbol,
+        cls:     stratToCls(s.strategy),
+        strat:   s.strategy,
+        close:   s.close,
+        t1:      s.target1,
+        t2:      s.target2,
+        sl:      s.stoploss,
+        note:    s.note,
+        islamic: s.islamic,
+      }));
 
-  summary.textContent = `Tracking ${selected.date} closing against ${previous.date} targets and stoploss. Base = previous day calls. Missing closes: ${missingCount}.`;
+      if (snap.records && snap.records.length) {
+        const sheetRecords = sheetsRecordsToLocal(snap.records);
+        const existing = loadRecords();
+        const existingDates = new Set(existing.map(r => r.date));
+        const merged = [...existing];
+        sheetRecords.forEach(r => { if (!existingDates.has(r.date)) merged.push(r); });
+        merged.sort((a, b) => new Date(a.savedAt) - new Date(b.savedAt));
+        saveRecords(merged);
+      }
 
-  addTargetTrackingRow(
-    'KSE100',
-    selected.kse100.closing,
-    previous.kse100.target1,
-    previous.kse100.target2,
-    previous.kse100.stoploss
-  );
-
-  previous.stocks.forEach(previousStock => {
-    const selectedStock = findStockInRecord(selected, previousStock.symbol);
-
-    addTargetTrackingRow(
-      previousStock.symbol,
-      selectedStock ? selectedStock.close : '',
-      previousStock.target1,
-      previousStock.target2,
-      previousStock.stoploss,
-      { autoTracked: !!(selectedStock && selectedStock.autoTracked) }
-    );
-  });
-}
-
-
-function evaluateTargetStatus(selectedClose, prevT1, prevT2, prevSL) {
-  const close = cleanNumber(selectedClose);
-  const t1 = cleanNumber(prevT1);
-  const t2 = cleanNumber(prevT2);
-  const sl = cleanNumber(prevSL);
-
-  if (close === null) return 'Missing Close';
-  if (t1 === null || t2 === null || sl === null) return 'Missing Targets';
-  if (close >= t2) return 'Target 2 Hit';
-  if (close >= t1) return 'Target 1 Hit';
-  if (close <= sl) return 'Stoploss Hit';
-  return 'In Range';
-}
-
-function applyPerformanceStatus(stats, status) {
-  stats.total += 1;
-  if (status === 'Target 2 Hit') stats.t2 += 1;
-  else if (status === 'Target 1 Hit') stats.t1 += 1;
-  else if (status === 'Stoploss Hit') stats.sl += 1;
-  else if (status === 'In Range') stats.range += 1;
-  else stats.missing += 1;
-}
-
-function countPerformanceForSelectedRecord(previous, selected) {
-  const stats = { total: 0, t2: 0, t1: 0, sl: 0, range: 0, missing: 0 };
-
-  const kseStatus = evaluateTargetStatus(
-    selected.kse100.closing,
-    previous.kse100.target1,
-    previous.kse100.target2,
-    previous.kse100.stoploss
-  );
-  applyPerformanceStatus(stats, kseStatus);
-
-  previous.stocks.forEach(previousStock => {
-    const selectedStock = findStockInRecord(selected, previousStock.symbol);
-    const status = evaluateTargetStatus(
-      selectedStock ? selectedStock.close : '',
-      previousStock.target1,
-      previousStock.target2,
-      previousStock.stoploss
-    );
-    applyPerformanceStatus(stats, status);
-  });
-
-  return stats;
-}
-
-function populatePerformanceDateSelects() {
-  const records = loadRecords();
-  const fromSelect = document.getElementById('performance-from-select');
-  const toSelect = document.getElementById('performance-to-select');
-  if (!fromSelect || !toSelect) return;
-
-  const previousFrom = fromSelect.value;
-  const previousTo = toSelect.value;
-
-  fromSelect.innerHTML = '<option value="">First Available</option>';
-  toSelect.innerHTML = '<option value="">Latest Saved Date</option>';
-
-  records.forEach(record => {
-    const key = getRecordKey(record);
-
-    const fromOption = document.createElement('option');
-    fromOption.value = key;
-    fromOption.textContent = record.date;
-    fromSelect.appendChild(fromOption);
-
-    const toOption = document.createElement('option');
-    toOption.value = key;
-    toOption.textContent = record.date;
-    toSelect.appendChild(toOption);
-  });
-
-  if (previousFrom && records.some(r => getRecordKey(r) === previousFrom)) fromSelect.value = previousFrom;
-  if (previousTo && records.some(r => getRecordKey(r) === previousTo)) toSelect.value = previousTo;
-}
-
-function renderPerformanceDashboard() {
-  const records = loadRecords();
-  const summary = document.getElementById('performance-summary');
-  const tbody = document.getElementById('performance-dashboard-body');
-  if (!summary || !tbody) return;
-
-  populatePerformanceDateSelects();
-  tbody.innerHTML = '';
-
-  const emptyTotals = () => {
-    document.getElementById('perf-total-calls').textContent = '0';
-    document.getElementById('perf-t2-hits').textContent = '0';
-    document.getElementById('perf-t1-hits').textContent = '0';
-    document.getElementById('perf-sl-hits').textContent = '0';
-    document.getElementById('perf-range-missing').textContent = '0 / 0';
-    document.getElementById('perf-t2-rate').textContent = '0.0%';
-    document.getElementById('perf-t1-rate').textContent = '0.0%';
-    document.getElementById('perf-sl-rate').textContent = '0.0%';
-  };
-
-  if (records.length < 2) {
-    emptyTotals();
-    summary.textContent = 'Save at least two records to view performance.';
-    return;
-  }
-
-  const fromKey = document.getElementById('performance-from-select')?.value || '';
-  const toKey = document.getElementById('performance-to-select')?.value || '';
-
-  let fromIndex = fromKey ? records.findIndex(r => getRecordKey(r) === fromKey) : 1;
-  let toIndex = toKey ? records.findIndex(r => getRecordKey(r) === toKey) : records.length - 1;
-
-  if (fromIndex < 1) fromIndex = 1;
-  if (toIndex < 1) toIndex = records.length - 1;
-  if (fromIndex > toIndex) { const temp = fromIndex; fromIndex = toIndex; toIndex = temp; }
-
-  const totals = { total: 0, t2: 0, t1: 0, sl: 0, range: 0, missing: 0 };
-
-  for (let i = fromIndex; i <= toIndex; i++) {
-    const previous = records[i - 1];
-    const selected = records[i];
-    const stats = countPerformanceForSelectedRecord(previous, selected);
-
-    totals.total += stats.total;
-    totals.t2 += stats.t2;
-    totals.t1 += stats.t1;
-    totals.sl += stats.sl;
-    totals.range += stats.range;
-    totals.missing += stats.missing;
-
-    const hitCount = stats.t1 + stats.t2;
-    const validTotal = Math.max(stats.total - stats.missing, 0);
-    const hitRate = validTotal ? ((hitCount / validTotal) * 100).toFixed(1) + '%' : '-';
-
-    tbody.innerHTML += `
-      <tr>
-        <td>${selected.date}</td>
-        <td>${stats.total}</td>
-        <td class="record-up">${stats.t2}</td>
-        <td class="record-up">${stats.t1}</td>
-        <td class="record-down">${stats.sl}</td>
-        <td class="record-flat">${stats.range}</td>
-        <td>${stats.missing}</td>
-        <td class="record-up">${hitRate}</td>
-      </tr>
-    `;
-  }
-
-  const totalHit = totals.t1 + totals.t2;
-  const validTotal = Math.max(totals.total - totals.missing, 0);
-  const t2Rate = validTotal ? ((totals.t2 / validTotal) * 100).toFixed(1) + '%' : '0.0%';
-  const t1Rate = validTotal ? ((totals.t1 / validTotal) * 100).toFixed(1) + '%' : '0.0%';
-  const slRate = validTotal ? ((totals.sl / validTotal) * 100).toFixed(1) + '%' : '0.0%';
-  const totalHitRate = validTotal ? ((totalHit / validTotal) * 100).toFixed(1) + '%' : '0.0%';
-
-  document.getElementById('perf-total-calls').textContent = totals.total;
-  document.getElementById('perf-t2-hits').textContent = totals.t2;
-  document.getElementById('perf-t1-hits').textContent = totals.t1;
-  document.getElementById('perf-sl-hits').textContent = totals.sl;
-  document.getElementById('perf-range-missing').textContent = `${totals.range} / ${totals.missing}`;
-  document.getElementById('perf-t2-rate').textContent = t2Rate;
-  document.getElementById('perf-t1-rate').textContent = t1Rate;
-  document.getElementById('perf-sl-rate').textContent = slRate;
-
-  summary.textContent = `Performance from ${records[fromIndex].date} to ${records[toIndex].date}. Target hit rate: ${totalHitRate}. Total valid calls: ${validTotal}.`;
-}
-
-
-
-    document.getElementById('in-date').addEventListener('change', function () {
-      const formatted = formatDateDisplay(this.value);
-      data.date = formatted;
+      localStorage.setItem('yc_data', JSON.stringify(data));
+      populateForm();
       renderReport();
+      renderRecordsDashboard();
+      renderPerformanceDashboard();
+
+      setSyncStatus('ok', 'Synced with Sheet');
+      setFetchStatus('Loaded from Google Sheets.', 'success');
+    } catch (err) {
+      console.warn('Sheet load failed, using localStorage:', err.message);
+      setSyncStatus('error', 'Sheet unavailable — local data');
+      setFetchStatus('Could not reach Sheet — showing local data.', 'error');
+      populateForm();
+      renderReport();
+      renderRecordsDashboard();
+      renderPerformanceDashboard();
+    } finally {
+      if (reloadBtn) reloadBtn.disabled = false;
+    }
+  }
+
+  // ── SAVE TO SHEET ────────────────────────────────────────────
+  async function saveToSheet() {
+    updateReport(false);
+
+    const btn = document.getElementById('save-sheet-btn');
+    if (btn) btn.disabled = true;
+    setSyncStatus('busy', 'Saving to Sheet…');
+    setFetchStatus('Saving to Google Sheets…', '');
+
+    try {
+      await sheetPost('saveReport', {
+        date: data.date, ref: data.ref,
+        closing: data.closing, t1: data.t1, t2: data.t2, sl: data.sl, mv: data.mv,
+      });
+
+      await sheetPost('saveStocks', data.stocks.map(s => ({
+        symbol:   s.sym,
+        strategy: s.strat,
+        close:    s.close,
+        target1:  s.t1,
+        target2:  s.t2,
+        stoploss: s.sl,
+        note:     s.note,
+        islamic:  s.islamic,
+      })));
+
+      setSyncStatus('ok', 'Saved to Sheet');
+      setFetchStatus('Saved to Google Sheets successfully.', 'success');
+      showSavedToast('✓ Synced to Sheet!');
+    } catch (err) {
+      console.error('Sheet save failed:', err.message);
+      setSyncStatus('error', 'Sheet save failed — local only');
+      setFetchStatus('Sheet save failed. Data saved locally only.', 'error');
+      showSavedToast('✓ Saved locally');
+    } finally {
+      if (btn) btn.disabled = false;
+    }
+  }
+
+  function showSavedToast(msg) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const toast = document.getElementById('saved-toast');
+    toast.textContent = msg || '✓ Saved!';
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+      toast.textContent = '✓ Saved!';
+    }, 2500);
+  }
+
+  // ════════════════════════════════════════════════════════════
+  //  HELPERS
+  // ════════════════════════════════════════════════════════════
+  function formatDateDisplay(value) {
+    if (!value) return '';
+    const date = new Date(value + 'T00:00:00');
+    return date.toLocaleDateString('en-GB', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+  }
+
+  function formatDateInputValue(displayText) {
+    if (!displayText) return '';
+    const parsed = new Date(displayText);
+    if (Number.isNaN(parsed.getTime())) return '';
+    return parsed.toISOString().split('T')[0];
+  }
+
+  function normalizeStock(s) {
+    return {
+      sym:     (s.sym || '').toUpperCase().trim(),
+      cls:     s.cls || 'badge',
+      strat:   s.strat || stratLabel(s.cls || 'badge'),
+      close:   s.close   || '',
+      t1:      s.t1      || '',
+      t2:      s.t2      || '',
+      sl:      s.sl      || '',
+      note:    s.note    || '',
+      islamic: !!s.islamic,
+    };
+  }
+
+  function stratLabel(cls) {
+    if (cls.includes('sell')) return 'Sell';
+    if (cls.includes('hold')) return 'Hold';
+    return 'Buy on dips';
+  }
+
+  function setFetchStatus(message, type = '') {
+    const el = document.getElementById('fetch-status');
+    el.textContent = message;
+    el.className = ('fetch-status ' + type).trim();
+  }
+
+  function touchDateTimeStamp() {
+    document.getElementById('in-date').value = new Date().toISOString().split('T')[0];
+  }
+
+  async function callApi(path) {
+    const response = await fetch(`${API_BASE}${path}`, { cache: 'no-store' });
+    if (!response.ok) {
+      const text = await response.text();
+      throw new Error(text || `Request failed: ${response.status}`);
+    }
+    return await response.json();
+  }
+
+  // ════════════════════════════════════════════════════════════
+  //  PSX PRICE FETCHERS
+  // ════════════════════════════════════════════════════════════
+  async function fetchKSEOnly() {
+    const btn = document.getElementById('fetch-kse-btn');
+    btn.disabled = true;
+    setFetchStatus('Fetching KSE100…', '');
+    try {
+      const result = await callApi('/api/psx/kse100');
+      document.getElementById('in-closing').value = result.close;
+      touchDateTimeStamp();
+      updateReport(false);
+      setFetchStatus('KSE100 refreshed successfully.', 'success');
+    } catch (error) {
+      setFetchStatus('Could not fetch KSE100 closing.', 'error');
+    } finally {
+      btn.disabled = false;
+    }
+  }
+
+  async function fetchLatestPrices() {
+    const button  = document.getElementById('fetch-prices-btn');
+    const rows    = Array.from(document.querySelectorAll('.stock-row'));
+    const symbols = rows.map(r => r.querySelector('.sr-sym').value.trim().toUpperCase()).filter(Boolean);
+
+    if (!symbols.length) { setFetchStatus('Add at least one symbol first.', 'error'); return; }
+
+    button.disabled = true;
+    setFetchStatus('Fetching latest KSE100 and stock closes…', '');
+
+    try {
+      const result = await callApi(`/api/psx/prices?symbols=${encodeURIComponent(symbols.join(','))}`);
+
+      if (result.kse100Close) document.getElementById('in-closing').value = result.kse100Close;
+
+      rows.forEach(row => {
+        const sym = row.querySelector('.sr-sym').value.trim().toUpperCase();
+        if (result.symbols && result.symbols[sym]) {
+          row.querySelector('.sr-close').value = result.symbols[sym];
+          row.querySelector('.sr-sym').dataset.lastSymbol = sym;
+        }
+      });
+
+      touchDateTimeStamp();
+      updateReport(false);
+
+      if (result.failed && result.failed.length)
+        setFetchStatus(`Fetched most prices. Failed: ${result.failed.join(', ')}`, 'error');
+      else
+        setFetchStatus('Latest KSE100 and stock closes fetched successfully.', 'success');
+    } catch (error) {
+      setFetchStatus('Price fetch failed.', 'error');
+    } finally {
+      button.disabled = false;
+    }
+  }
+
+  async function fetchSingleSymbolPrice() {
+    const btn    = document.getElementById('fetch-single-btn');
+    const input  = document.getElementById('single-symbol-input');
+    const symbol = input.value.trim().toUpperCase();
+
+    if (!symbol) { setFetchStatus('Enter a symbol first, e.g. SAZEW.', 'error'); return; }
+
+    btn.disabled = true;
+    setFetchStatus(`Fetching ${symbol}…`, '');
+
+    try {
+      const result = await callApi(`/api/psx/prices?symbols=${encodeURIComponent(symbol)}`);
+      const close  = result.symbols && result.symbols[symbol];
+
+      if (!close) { setFetchStatus(`Could not fetch ${symbol}.`, 'error'); return; }
+
+      let matched = false;
+      document.querySelectorAll('.stock-row').forEach(row => {
+        if (row.querySelector('.sr-sym').value.trim().toUpperCase() === symbol) {
+          row.querySelector('.sr-close').value = close;
+          row.querySelector('.sr-sym').dataset.lastSymbol = symbol;
+          matched = true;
+        }
+      });
+
+      touchDateTimeStamp();
+      updateReport(false);
+      setFetchStatus(
+        matched ? `${symbol} close updated successfully.` : `${symbol} close is ${close}. Symbol not found in rows.`,
+        'success'
+      );
+    } catch (error) {
+      setFetchStatus(`Failed to fetch ${symbol}.`, 'error');
+    } finally {
+      btn.disabled = false;
+    }
+  }
+
+  async function autofillCloseForRow(symbolInput) {
+    const symbol         = symbolInput.value.trim().toUpperCase();
+    const previousSymbol = symbolInput.dataset.lastSymbol || '';
+    if (!symbol || symbol === previousSymbol) return;
+
+    const row        = symbolInput.closest('.stock-row');
+    const closeInput = row && row.querySelector('.sr-close');
+    if (!closeInput) return;
+
+    try {
+      symbolInput.dataset.lastSymbol = symbol;
+      setFetchStatus(`Fetching ${symbol}…`, '');
+      const result = await callApi(`/api/psx/prices?symbols=${encodeURIComponent(symbol)}`);
+      const close  = result.symbols && result.symbols[symbol];
+      if (close) {
+        closeInput.value = close;
+        touchDateTimeStamp();
+        updateReport(false);
+        setFetchStatus(`${symbol} close filled automatically.`, 'success');
+      } else {
+        setFetchStatus(`Could not fetch ${symbol}.`, 'error');
+      }
+    } catch (error) {
+      setFetchStatus(`Failed to fetch ${symbol}.`, 'error');
+    }
+  }
+
+  function attachSymbolAutoFetch(input) {
+    if (!input) return;
+    input.dataset.lastSymbol = input.value.trim().toUpperCase();
+    input.addEventListener('blur', async function () { await autofillCloseForRow(this); });
+  }
+
+  // ════════════════════════════════════════════════════════════
+  //  EXPORT
+  // ════════════════════════════════════════════════════════════
+  function exportReportPDF() {
+    updateReport(false);
+    const reportHtml = document.getElementById('report-card').outerHTML;
+    const styles     = Array.from(document.querySelectorAll('style, link[rel="stylesheet"]')).map(el => el.outerHTML).join('\n');
+    const printWindow = window.open('', '_blank', 'width=1400,height=900');
+    if (!printWindow) { setFetchStatus('Popup blocked. Please allow popups for PDF export.', 'error'); return; }
+    printWindow.document.open();
+    printWindow.document.write(`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><title>Youngs Capital Report PDF</title>${styles}<style>body{background:#fff!important;padding:24px!important;margin:0!important}.wrapper,.report-shell{max-width:100%!important;margin:0!important}.report-shell{box-shadow:none!important}@page{size:A4 landscape;margin:10mm}@media print{body{padding:0!important}.report-shell{break-inside:avoid}}</style></head><body>${reportHtml}</body></html>`);
+    printWindow.document.close();
+    printWindow.onload = () => setTimeout(() => { printWindow.focus(); printWindow.print(); }, 500);
+  }
+
+  async function downloadScreenshot() {
+    updateReport(false);
+    // Capture the shell (includes light/dark bg) not just the inner card
+    const reportShell = document.getElementById('report-shell');
+    const buttons = [document.getElementById('screenshot-btn'), document.getElementById('screenshot-btn-theme')];
+    if (!reportShell) { setFetchStatus('Report card not found.', 'error'); return; }
+    try {
+      buttons.forEach(b => { if (b) b.disabled = true; });
+      setFetchStatus('Generating screenshot…', '');
+      const isLight = reportShell.classList.contains('light-mode');
+      const canvas = await html2canvas(reportShell, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: isLight ? '#f8f4e6' : '#06090f'
+      });
+      const link = document.createElement('a');
+      link.download = `${document.getElementById('in-ref').value || 'report'}-screenshot.png`;
+      link.href     = canvas.toDataURL('image/png');
+      link.click();
+      setFetchStatus('Screenshot downloaded successfully.', 'success');
+    } catch (error) {
+      setFetchStatus('Failed to generate screenshot.', 'error');
+    } finally {
+      buttons.forEach(b => { if (b) b.disabled = false; });
+    }
+  }
+
+  // ════════════════════════════════════════════════════════════
+  //  STOCK ROW EDITOR
+  // ════════════════════════════════════════════════════════════
+  function addStockRow(d) {
+    d = normalizeStock(d || {});
+    const div = document.createElement('div');
+    div.className = 'stock-row';
+    div.innerHTML = `
+      <input class="field-input sr-sym"   style="font-size:13px;padding:8px 10px" value="${d.sym}"   placeholder="Symbol">
+      <select class="field-input sr-cls"  style="font-size:12px;padding:8px 10px">
+        <option value="badge"      ${d.cls==='badge'?'selected':''}>Buy on dips</option>
+        <option value="badge sell" ${d.cls==='badge sell'?'selected':''}>Sell</option>
+        <option value="badge hold" ${d.cls==='badge hold'?'selected':''}>Hold</option>
+      </select>
+      <input class="field-input sr-close" style="font-size:13px;padding:8px 10px" value="${d.close}" placeholder="Close">
+      <input class="field-input sr-t1"    style="font-size:13px;padding:8px 10px" value="${d.t1}"    placeholder="T1">
+      <input class="field-input sr-t2"    style="font-size:13px;padding:8px 10px" value="${d.t2}"    placeholder="T2">
+      <input class="field-input sr-sl"    style="font-size:13px;padding:8px 10px" value="${d.sl}"    placeholder="SL">
+      <input class="field-input sr-note"  style="font-size:13px;padding:8px 10px" value="${d.note}"  placeholder="Analyst note">
+      <label class="checkbox-wrap">
+        <input type="checkbox" class="sr-islamic" ${d.islamic ? 'checked' : ''}>
+        <span>Islamic</span>
+      </label>
+      <button class="del-btn" onclick="this.parentElement.remove()">×</button>
+    `;
+    document.getElementById('stock-rows').appendChild(div);
+    attachSymbolAutoFetch(div.querySelector('.sr-sym'));
+  }
+
+  function populateForm() {
+    document.getElementById('in-date').value    = formatDateInputValue(data.date);
+    document.getElementById('in-ref').value     = data.ref;
+    document.getElementById('in-closing').value = data.closing;
+    document.getElementById('in-t1').value      = data.t1;
+    document.getElementById('in-t2').value      = data.t2;
+    document.getElementById('in-sl').value      = data.sl;
+    document.getElementById('in-mv').value      = data.mv;
+    document.getElementById('stock-rows').innerHTML = '';
+    data.stocks.map(normalizeStock).forEach(s => addStockRow(s));
+    // Also populate sheets URL
+    const savedUrl = localStorage.getItem('yc_sheets_url');
+    if (savedUrl) document.getElementById('sheets-url-input').value = savedUrl;
+  }
+
+  function renderReport() {
+    document.getElementById('disp-date').textContent    = data.date;
+    document.getElementById('disp-ref').textContent     = data.ref;
+    document.getElementById('disp-closing').textContent = data.closing;
+    document.getElementById('disp-t1').textContent      = data.t1;
+    document.getElementById('disp-t2').textContent      = data.t2;
+    document.getElementById('disp-sl').textContent      = data.sl;
+    document.getElementById('disp-mv').innerHTML        = '<strong>Market view:</strong> ' + data.mv;
+
+    const tbody = document.getElementById('disp-stocks');
+    tbody.innerHTML = '';
+    data.stocks.map(normalizeStock).forEach(s => {
+      const islamicBadge = s.islamic ? `<span class="islamic-badge" title="Islamic stock">🕌</span>` : '';
+      tbody.innerHTML += `
+        <tr>
+          <td class="symbol-cell"><div class="symbol-wrap"><span class="symbol">${s.sym}</span>${islamicBadge}</div></td>
+          <td><span class="${s.cls}">${s.strat}</span></td>
+          <td class="num">${s.close}</td>
+          <td class="tgt">${s.t1}</td>
+          <td class="tgt">${s.t2}</td>
+          <td class="stop">${s.sl}</td>
+          <td class="note">${s.note}</td>
+        </tr>`;
+    });
+  }
+
+  function updateReport(showToast = true) {
+    data.date    = formatDateDisplay(document.getElementById('in-date').value);
+    data.ref     = document.getElementById('in-ref').value;
+    data.closing = document.getElementById('in-closing').value;
+    data.t1      = document.getElementById('in-t1').value;
+    data.t2      = document.getElementById('in-t2').value;
+    data.sl      = document.getElementById('in-sl').value;
+    data.mv      = document.getElementById('in-mv').value;
+    data.stocks  = [];
+
+    document.querySelectorAll('.stock-row').forEach(row => {
+      const cls = row.querySelector('.sr-cls').value;
+      data.stocks.push({
+        sym: row.querySelector('.sr-sym').value, cls,
+        strat:   stratLabel(cls),
+        close:   row.querySelector('.sr-close').value,
+        t1:      row.querySelector('.sr-t1').value,
+        t2:      row.querySelector('.sr-t2').value,
+        sl:      row.querySelector('.sr-sl').value,
+        note:    row.querySelector('.sr-note').value,
+        islamic: row.querySelector('.sr-islamic').checked,
+      });
     });
 
     data.stocks = data.stocks.map(normalizeStock);
-    populateForm();
+    localStorage.setItem('yc_data', JSON.stringify(data));
     renderReport();
+
+    if (showToast) showSavedToast('✓ Saved!');
+  }
+
+  // ════════════════════════════════════════════════════════════
+  //  RECORDS
+  // ════════════════════════════════════════════════════════════
+  const RECORDS_KEY = 'yc_daily_report_records';
+
+  function cleanNumber(value) {
+    const num = Number(String(value || '').replace(/,/g, '').trim());
+    return Number.isFinite(num) ? num : null;
+  }
+
+  function formatSignedNumber(value) {
+    if (value === null || !Number.isFinite(value)) return '-';
+    const abs = Math.abs(value).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    if (value > 0) return '+' + abs;
+    if (value < 0) return '-' + abs;
+    return '0.00';
+  }
+
+  function getRecordKey(record) {
+    return record.dateInput || record.date || String(record.id || '');
+  }
+
+  function getCurrentRecordFromForm() {
+    const record = {
+      id: Date.now(),
+      date: formatDateDisplay(document.getElementById('in-date').value) || 'No Date',
+      dateInput: document.getElementById('in-date').value,
+      savedAt: new Date().toISOString(),
+      kse100: {
+        closing:  document.getElementById('in-closing').value,
+        target1:  document.getElementById('in-t1').value,
+        target2:  document.getElementById('in-t2').value,
+        stoploss: document.getElementById('in-sl').value,
+      },
+      stocks: [],
+    };
+
+    document.querySelectorAll('.stock-row').forEach(row => {
+      const cls    = row.querySelector('.sr-cls').value;
+      const symbol = row.querySelector('.sr-sym').value.trim().toUpperCase();
+      if (!symbol) return;
+      record.stocks.push({
+        symbol, strategy: stratLabel(cls),
+        close:   row.querySelector('.sr-close').value,
+        target1: row.querySelector('.sr-t1').value,
+        target2: row.querySelector('.sr-t2').value,
+        stoploss:row.querySelector('.sr-sl').value,
+        note:    row.querySelector('.sr-note').value,
+        islamic: row.querySelector('.sr-islamic').checked,
+      });
+    });
+
+    return record;
+  }
+
+  function loadRecords() {
+    try { return JSON.parse(localStorage.getItem(RECORDS_KEY) || '[]'); }
+    catch (e) { return []; }
+  }
+
+  function saveRecords(records) {
+    localStorage.setItem(RECORDS_KEY, JSON.stringify(records));
+  }
+
+  function showRecordToast(message) {
+    const toast = document.getElementById('saved-toast');
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => { toast.classList.remove('show'); toast.textContent = '✓ Saved!'; }, 2500);
+  }
+
+  async function saveDailyRecord() {
+    updateReport(false);
+    const newRecord = getCurrentRecordFromForm();
+
+    let records = loadRecords();
+    const idx   = records.findIndex(r => getRecordKey(r) === getRecordKey(newRecord));
+    if (idx >= 0) records[idx] = newRecord; else records.push(newRecord);
+    records.sort((a, b) => new Date(a.dateInput || a.savedAt) - new Date(b.dateInput || b.savedAt));
+    saveRecords(records);
+    renderRecordsDashboard(getRecordKey(newRecord));
+    renderPerformanceDashboard();
+
+    try {
+      setSyncStatus('busy', 'Saving record to Sheet…');
+      await sheetPost('saveRecord', {
+        date: newRecord.date,
+        ref:  data.ref,
+        kse: {
+          closing:  newRecord.kse100.closing,
+          target1:  newRecord.kse100.target1,
+          target2:  newRecord.kse100.target2,
+          stoploss: newRecord.kse100.stoploss,
+        },
+        stocks: newRecord.stocks,
+      });
+      setSyncStatus('ok', 'Record synced');
+    } catch (err) {
+      console.warn('Record push to sheet failed:', err.message);
+      setSyncStatus('error', 'Record saved locally only');
+    }
+
+    showRecordToast('✓ Today record saved!');
+  }
+
+  function clearDailyRecords() {
+    if (!confirm('Clear all saved admin records? This will not affect the current report.')) return;
+    localStorage.removeItem(RECORDS_KEY);
     renderRecordsDashboard();
     renderPerformanceDashboard();
+    showRecordToast('✓ Records cleared!');
+  }
+
+  function formatChange(latest, previous) {
+    const l = cleanNumber(latest), p = cleanNumber(previous);
+    if (l === null || p === null || p === 0) return { text: '-', cls: 'record-flat' };
+    const diff    = l - p;
+    const pct     = (diff / p) * 100;
+    const diffTxt = diff.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    if (diff > 0) return { text: `+${diffTxt} / +${pct.toFixed(2)}%`, cls: 'record-up' };
+    if (diff < 0) return { text: `${diffTxt} / ${pct.toFixed(2)}%`,  cls: 'record-down' };
+    return { text: 'No change', cls: 'record-flat' };
+  }
+
+  function populateRecordDateSelect(selectedKey = '') {
+    const select = document.getElementById('record-date-select');
+    if (!select) return;
+    const records = loadRecords();
+    const current = selectedKey || select.value;
+    select.innerHTML = '<option value="">Latest Saved Date</option>';
+    records.slice().reverse().forEach(record => {
+      const key    = getRecordKey(record);
+      const option = document.createElement('option');
+      option.value = key; option.textContent = record.date;
+      if (key === current) option.selected = true;
+      select.appendChild(option);
+    });
+  }
+
+  function buildPriceDifferenceText(status, close, t1, t2, sl) {
+    if (close === null) return '-';
+    if (status === 'Target 2 Hit') return `<div class="record-diff-note">Above T2: ${formatSignedNumber(close - t2)}</div>`;
+    if (status === 'Target 1 Hit') return `<div class="record-diff-note">Above T1: ${formatSignedNumber(close - t1)}<br>To T2: ${formatSignedNumber(close - t2)}</div>`;
+    if (status === 'Stoploss Hit') return `<div class="record-diff-note">Below SL: ${formatSignedNumber(close - sl)}</div>`;
+    return `<div class="record-diff-note">To T1: ${formatSignedNumber(close - t1)}<br>Above SL: ${formatSignedNumber(close - sl)}</div>`;
+  }
+
+  function getPreviousAndSelectedRecords(selectedKey = '') {
+    const records = loadRecords();
+    if (records.length < 2) return { records, previous: null, selected: null, selectedIndex: -1 };
+    const keyToUse = selectedKey || document.getElementById('record-date-select')?.value || getRecordKey(records[records.length - 1]);
+    let selectedIndex = records.findIndex(r => getRecordKey(r) === keyToUse);
+    if (selectedIndex < 0) selectedIndex = records.length - 1;
+    if (selectedIndex === 0) return { records, previous: null, selected: records[0], selectedIndex };
+    return { records, previous: records[selectedIndex - 1], selected: records[selectedIndex], selectedIndex };
+  }
+
+  function findStockInRecord(record, symbol) {
+    if (!record || !Array.isArray(record.stocks)) return null;
+    return record.stocks.find(s => String(s.symbol || '').toUpperCase() === String(symbol || '').toUpperCase()) || null;
+  }
+
+  function addTargetTrackingRow(label, selectedClose, prevT1, prevT2, prevSL, options = {}) {
+    const tbody = document.getElementById('record-dashboard-body');
+    if (!tbody) return;
+
+    const close = cleanNumber(selectedClose);
+    const t1    = cleanNumber(prevT1);
+    const t2    = cleanNumber(prevT2);
+    const sl    = cleanNumber(prevSL);
+
+    let status = 'Neutral', statusClass = 'record-flat';
+
+    if (close === null) {
+      status = 'Missing Close'; statusClass = 'record-missing';
+    } else if (t1 === null || t2 === null || sl === null) {
+      status = 'Missing Targets'; statusClass = 'record-missing';
+    } else if (close >= t2) {
+      status = 'Target 2 Hit'; statusClass = 'record-up';
+    } else if (close >= t1) {
+      status = 'Target 1 Hit'; statusClass = 'record-up';
+    } else if (close <= sl) {
+      status = 'Stoploss Hit'; statusClass = 'record-down';
+    } else {
+      status = 'In Range'; statusClass = 'record-flat';
+    }
+
+    const progressToT1 = close !== null && t1 ? ((close / t1) * 100).toFixed(1) + '%' : '-';
+    const diffText = close === null
+      ? '<div class="record-diff-note">Click Fetch Missing Closes to track this previous call.</div>'
+      : buildPriceDifferenceText(status, close, t1, t2, sl);
+
+    const sourceTag = options.autoTracked ? '<span class="record-tag">Auto Tracked</span>' : '';
+
+    tbody.innerHTML += `
+      <tr>
+        <td>${label}${sourceTag}</td>
+        <td>Close: ${selectedClose || '-'}</td>
+        <td>T1: ${prevT1 || '-'} | T2: ${prevT2 || '-'} | SL: ${prevSL || '-'}</td>
+        <td class="${statusClass}">${status} (${progressToT1})</td>
+        <td>${diffText}</td>
+      </tr>`;
+  }
+
+  async function updateMissingSelectedCloses() {
+    const button = document.getElementById('fetch-missing-record-btn');
+    const selectedKey = document.getElementById('record-date-select')?.value || '';
+    const { records, previous, selected, selectedIndex } = getPreviousAndSelectedRecords(selectedKey);
+
+    if (!previous || !selected || selectedIndex <= 0) {
+      setFetchStatus('Select a saved date that has a previous record first.', 'error');
+      return;
+    }
+
+    const missingSymbols = previous.stocks
+      .map(s => String(s.symbol || '').toUpperCase())
+      .filter(symbol => {
+        if (!symbol) return false;
+        const sel = findStockInRecord(selected, symbol);
+        return !sel || cleanNumber(sel.close) === null;
+      });
+
+    const unique = [...new Set(missingSymbols)];
+
+    if (!unique.length) {
+      setFetchStatus('No missing closes. All previous calls are already tracked.', 'success');
+      renderRecordsDashboard(getRecordKey(selected));
+      return;
+    }
+
+    try {
+      if (button) button.disabled = true;
+      setFetchStatus(`Fetching missing closes: ${unique.join(', ')}`, '');
+
+      const result = await callApi(`/api/psx/prices?symbols=${encodeURIComponent(unique.join(','))}`);
+      const failed = [];
+
+      unique.forEach(symbol => {
+        const close         = result.symbols && result.symbols[symbol];
+        const previousStock = findStockInRecord(previous, symbol);
+        if (!close || !previousStock) { failed.push(symbol); return; }
+
+        let selectedStock = findStockInRecord(selected, symbol);
+        if (selectedStock) {
+          selectedStock.close = close; selectedStock.autoTracked = true;
+        } else {
+          selected.stocks.push({
+            symbol, strategy: previousStock.strategy || 'Tracked', close,
+            target1: previousStock.target1, target2: previousStock.target2,
+            stoploss: previousStock.stoploss, note: 'Auto-tracked from previous record',
+            islamic: !!previousStock.islamic, autoTracked: true,
+          });
+        }
+      });
+
+      selected.savedAt = new Date().toISOString();
+      records[selectedIndex] = selected;
+      saveRecords(records);
+      renderRecordsDashboard(getRecordKey(selected));
+      renderPerformanceDashboard();
+
+      setFetchStatus(
+        failed.length ? `Missing closes updated. Failed: ${failed.join(', ')}` : 'Missing closes updated successfully.',
+        failed.length ? 'error' : 'success'
+      );
+    } catch (error) {
+      setFetchStatus('Failed to fetch missing closes.', 'error');
+    } finally {
+      if (button) button.disabled = false;
+    }
+  }
+
+  function renderRecordsDashboard(selectedKey = '') {
+    const records = loadRecords();
+    const summary = document.getElementById('record-summary');
+    const tbody   = document.getElementById('record-dashboard-body');
+    if (!summary || !tbody) return;
+
+    populateRecordDateSelect(selectedKey);
+    tbody.innerHTML = '';
+
+    if (records.length === 0) { summary.textContent = 'No records saved yet.'; return; }
+
+    if (records.length === 1) {
+      summary.textContent = `1 record saved for ${records[0].date}. Save another day to compare.`;
+      return;
+    }
+
+    const { previous, selected, selectedIndex } = getPreviousAndSelectedRecords(selectedKey);
+    if (!selected) { summary.textContent = 'No selected record found.'; return; }
+
+    const select = document.getElementById('record-date-select');
+    if (select) select.value = getRecordKey(selected);
+
+    if (selectedIndex === 0 || !previous) {
+      summary.textContent = `${selected.date} is the first saved record. No previous date available for target tracking.`;
+      return;
+    }
+
+    const missingCount = previous.stocks.filter(s => {
+      const sel = findStockInRecord(selected, s.symbol);
+      return !sel || cleanNumber(sel.close) === null;
+    }).length;
+
+    summary.textContent = `Tracking ${selected.date} closing against ${previous.date} targets. Missing closes: ${missingCount}.`;
+
+    addTargetTrackingRow('KSE100', selected.kse100.closing, previous.kse100.target1, previous.kse100.target2, previous.kse100.stoploss);
+
+    previous.stocks.forEach(prev => {
+      const sel = findStockInRecord(selected, prev.symbol);
+      addTargetTrackingRow(
+        prev.symbol,
+        sel ? sel.close : '',
+        prev.target1, prev.target2, prev.stoploss,
+        { autoTracked: !!(sel && sel.autoTracked) }
+      );
+    });
+  }
+
+  // ════════════════════════════════════════════════════════════
+  //  PERFORMANCE
+  // ════════════════════════════════════════════════════════════
+  function evaluateTargetStatus(selectedClose, prevT1, prevT2, prevSL) {
+    const close = cleanNumber(selectedClose);
+    const t1    = cleanNumber(prevT1);
+    const t2    = cleanNumber(prevT2);
+    const sl    = cleanNumber(prevSL);
+    if (close === null) return 'Missing Close';
+    if (t1 === null || t2 === null || sl === null) return 'Missing Targets';
+    if (close >= t2) return 'Target 2 Hit';
+    if (close >= t1) return 'Target 1 Hit';
+    if (close <= sl) return 'Stoploss Hit';
+    return 'In Range';
+  }
+
+  function applyPerformanceStatus(stats, status) {
+    stats.total++;
+    if      (status === 'Target 2 Hit') stats.t2++;
+    else if (status === 'Target 1 Hit') stats.t1++;
+    else if (status === 'Stoploss Hit') stats.sl++;
+    else if (status === 'In Range')     stats.range++;
+    else                                stats.missing++;
+  }
+
+  function countPerformanceForSelectedRecord(previous, selected) {
+    const stats = { total: 0, t2: 0, t1: 0, sl: 0, range: 0, missing: 0 };
+    applyPerformanceStatus(stats, evaluateTargetStatus(selected.kse100.closing, previous.kse100.target1, previous.kse100.target2, previous.kse100.stoploss));
+    previous.stocks.forEach(prev => {
+      const sel = findStockInRecord(selected, prev.symbol);
+      applyPerformanceStatus(stats, evaluateTargetStatus(sel ? sel.close : '', prev.target1, prev.target2, prev.stoploss));
+    });
+    return stats;
+  }
+
+  function populatePerformanceDateSelects() {
+    const records    = loadRecords();
+    const fromSelect = document.getElementById('performance-from-select');
+    const toSelect   = document.getElementById('performance-to-select');
+    if (!fromSelect || !toSelect) return;
+
+    const prevFrom = fromSelect.value, prevTo = toSelect.value;
+    fromSelect.innerHTML = '<option value="">First Available</option>';
+    toSelect.innerHTML   = '<option value="">Latest Saved Date</option>';
+
+    records.forEach(record => {
+      const key = getRecordKey(record);
+      const o1  = document.createElement('option'); o1.value = key; o1.textContent = record.date; fromSelect.appendChild(o1);
+      const o2  = document.createElement('option'); o2.value = key; o2.textContent = record.date; toSelect.appendChild(o2);
+    });
+
+    if (prevFrom && records.some(r => getRecordKey(r) === prevFrom)) fromSelect.value = prevFrom;
+    if (prevTo   && records.some(r => getRecordKey(r) === prevTo))   toSelect.value   = prevTo;
+  }
+
+  function renderPerformanceDashboard() {
+    const records = loadRecords();
+    const summary = document.getElementById('performance-summary');
+    const tbody   = document.getElementById('performance-dashboard-body');
+    if (!summary || !tbody) return;
+
+    populatePerformanceDateSelects();
+    tbody.innerHTML = '';
+
+    const emptyTotals = () => {
+      ['perf-total-calls','perf-t2-hits','perf-t1-hits','perf-sl-hits'].forEach(id => document.getElementById(id).textContent = '0');
+      document.getElementById('perf-range-missing').textContent = '0 / 0';
+      ['perf-t2-rate','perf-t1-rate','perf-sl-rate'].forEach(id => document.getElementById(id).textContent = '0.0%');
+    };
+
+    if (records.length < 2) { emptyTotals(); summary.textContent = 'Save at least two records to view performance.'; return; }
+
+    const fromKey = document.getElementById('performance-from-select')?.value || '';
+    const toKey   = document.getElementById('performance-to-select')?.value   || '';
+
+    let fromIndex = fromKey ? records.findIndex(r => getRecordKey(r) === fromKey) : 1;
+    let toIndex   = toKey   ? records.findIndex(r => getRecordKey(r) === toKey)   : records.length - 1;
+    if (fromIndex < 1) fromIndex = 1;
+    if (toIndex   < 1) toIndex   = records.length - 1;
+    if (fromIndex > toIndex) { const t = fromIndex; fromIndex = toIndex; toIndex = t; }
+
+    const totals = { total: 0, t2: 0, t1: 0, sl: 0, range: 0, missing: 0 };
+
+    for (let i = fromIndex; i <= toIndex; i++) {
+      const stats = countPerformanceForSelectedRecord(records[i - 1], records[i]);
+      Object.keys(totals).forEach(k => totals[k] += stats[k]);
+
+      const hitCount  = stats.t1 + stats.t2;
+      const validTotal = Math.max(stats.total - stats.missing, 0);
+      const hitRate   = validTotal ? ((hitCount / validTotal) * 100).toFixed(1) + '%' : '-';
+
+      tbody.innerHTML += `
+        <tr>
+          <td>${records[i].date}</td>
+          <td>${stats.total}</td>
+          <td class="record-up">${stats.t2}</td>
+          <td class="record-up">${stats.t1}</td>
+          <td class="record-down">${stats.sl}</td>
+          <td class="record-flat">${stats.range}</td>
+          <td>${stats.missing}</td>
+          <td class="record-up">${hitRate}</td>
+        </tr>`;
+    }
+
+    const totalHit   = totals.t1 + totals.t2;
+    const validTotal = Math.max(totals.total - totals.missing, 0);
+    const rate = n => validTotal ? ((n / validTotal) * 100).toFixed(1) + '%' : '0.0%';
+
+    document.getElementById('perf-total-calls').textContent    = totals.total;
+    document.getElementById('perf-t2-hits').textContent        = totals.t2;
+    document.getElementById('perf-t1-hits').textContent        = totals.t1;
+    document.getElementById('perf-sl-hits').textContent        = totals.sl;
+    document.getElementById('perf-range-missing').textContent  = `${totals.range} / ${totals.missing}`;
+    document.getElementById('perf-t2-rate').textContent        = rate(totals.t2);
+    document.getElementById('perf-t1-rate').textContent        = rate(totals.t1);
+    document.getElementById('perf-sl-rate').textContent        = rate(totals.sl);
+
+    summary.textContent = `Performance from ${records[fromIndex].date} to ${records[toIndex].date}. Hit rate: ${rate(totalHit)}. Valid calls: ${validTotal}.`;
+  }
+
+  // ════════════════════════════════════════════════════════════
+  //  INIT
+  // ════════════════════════════════════════════════════════════
+  document.getElementById('in-date').addEventListener('change', function () {
+    data.date = formatDateDisplay(this.value);
+    renderReport();
+  });
+
+  data.stocks = data.stocks.map(normalizeStock);
+
+  // Apply saved theme before loading sheet
+  loadSavedTheme();
+
+  // Populate saved sheet URL in the input field
+  const savedSheetUrl = localStorage.getItem('yc_sheets_url');
+  if (savedSheetUrl) document.getElementById('sheets-url-input').value = savedSheetUrl;
+
+  // Load from Google Sheets on start (falls back to localStorage silently)
+  loadFromSheet();
   </script>
+
+  <!-- ══════════════════════════════════════════════════════════
+       GOOGLE APPS SCRIPT — PASTE INTO YOUR BOUND SHEET
+  ══════════════════════════════════════════════════════════════
+
+  HOW TO SET UP GOOGLE SHEETS INTEGRATION:
+  =========================================
+  1. Open your Google Sheet (or create a new one).
+  2. Click Extensions → Apps Script.
+  3. Delete all existing code and paste the code block below.
+  4. Save (Ctrl+S), then click Deploy → New Deployment.
+  5. Set type = "Web App", Execute as = "Me", Who has access = "Anyone".
+  6. Click Deploy, copy the Web App URL.
+  7. Paste that URL into the "Google Sheets Integration" box above and click "Save URL".
+
+  ═══════════════════════════════════════════════════════════════
+  function doGet(e) {
+    const action = e.parameter.action;
+    const ss = SpreadsheetApp.getActiveSpreadsheet();
+
+    if (action === 'all') {
+      const reportSheet = ss.getSheetByName('Report') || ss.insertSheet('Report');
+      const stocksSheet = ss.getSheetByName('Stocks') || ss.insertSheet('Stocks');
+      const recordsSheet = ss.getSheetByName('Records') || ss.insertSheet('Records');
+
+      const reportData = reportSheet.getDataRange().getValues();
+      const stocksData = stocksSheet.getDataRange().getValues();
+      const recordsData = recordsSheet.getDataRange().getValues();
+
+      const report = {};
+      reportData.forEach(row => { if (row[0]) report[row[0]] = row[1]; });
+
+      const stocks = [];
+      for (let i = 1; i < stocksData.length; i++) {
+        const r = stocksData[i];
+        if (r[0]) stocks.push({ symbol: r[0], strategy: r[1], close: r[2], target1: r[3], target2: r[4], stoploss: r[5], note: r[6], islamic: r[7] });
+      }
+
+      const records = [];
+      for (let i = 1; i < recordsData.length; i++) {
+        const r = recordsData[i];
+        if (r[0]) records.push({ date: r[0], kseClosing: r[1], kseTarget1: r[2], kseTarget2: r[3], kseStoploss: r[4], symbol: r[5], strategy: r[6], stockClose: r[7], stockT1: r[8], stockT2: r[9], stockSL: r[10], note: r[11] });
+      }
+
+      return ContentService.createTextOutput(JSON.stringify({
+        status: 'ok',
+        data: {
+          report: {
+            date: report['date'] || '',
+            ref: report['ref'] || '',
+            kse: { closing: report['closing'] || '', target1: report['target1'] || '', target2: report['target2'] || '', stoploss: report['stoploss'] || '' },
+            marketView: report['mv'] || ''
+          },
+          stocks,
+          records
+        }
+      })).setMimeType(ContentService.MimeType.JSON);
+    }
+
+    return ContentService.createTextOutput(JSON.stringify({ status: 'error', message: 'Unknown action' })).setMimeType(ContentService.MimeType.JSON);
+  }
+
+  function doPost(e) {
+    const body = JSON.parse(e.postData.contents);
+    const action = body.action;
+    const payload = body.data;
+    const ss = SpreadsheetApp.getActiveSpreadsheet();
+
+    if (action === 'saveReport') {
+      const sheet = ss.getSheetByName('Report') || ss.insertSheet('Report');
+      sheet.clearContents();
+      sheet.getRange(1,1,1,2).setValues([['Field','Value']]);
+      const rows = [
+        ['date', payload.date], ['ref', payload.ref],
+        ['closing', payload.closing], ['target1', payload.t1],
+        ['target2', payload.t2], ['stoploss', payload.sl], ['mv', payload.mv]
+      ];
+      sheet.getRange(2, 1, rows.length, 2).setValues(rows);
+      return ContentService.createTextOutput(JSON.stringify({ status: 'ok' })).setMimeType(ContentService.MimeType.JSON);
+    }
+
+    if (action === 'saveStocks') {
+      const sheet = ss.getSheetByName('Stocks') || ss.insertSheet('Stocks');
+      sheet.clearContents();
+      sheet.getRange(1,1,1,8).setValues([['Symbol','Strategy','Close','Target1','Target2','Stoploss','Note','Islamic']]);
+      if (payload.length) {
+        const rows = payload.map(s => [s.symbol, s.strategy, s.close, s.target1, s.target2, s.stoploss, s.note, s.islamic ? 'Yes' : 'No']);
+        sheet.getRange(2, 1, rows.length, 8).setValues(rows);
+      }
+      return ContentService.createTextOutput(JSON.stringify({ status: 'ok' })).setMimeType(ContentService.MimeType.JSON);
+    }
+
+    if (action === 'saveRecord') {
+      const sheet = ss.getSheetByName('Records') || ss.insertSheet('Records');
+      if (sheet.getLastRow() === 0) {
+        sheet.getRange(1,1,1,12).setValues([['Date','KSE Close','KSE T1','KSE T2','KSE SL','Symbol','Strategy','Stock Close','Stock T1','Stock T2','Stock SL','Note']]);
+      }
+      const kse = payload.kse;
+      // KSE100 row
+      sheet.appendRow([payload.date, kse.closing, kse.target1, kse.target2, kse.stoploss, 'KSE100', '', '', '', '', '', '']);
+      // Stock rows
+      (payload.stocks || []).forEach(s => {
+        sheet.appendRow([payload.date, kse.closing, kse.target1, kse.target2, kse.stoploss, s.symbol, s.strategy, s.close, s.target1, s.target2, s.stoploss, s.note]);
+      });
+      return ContentService.createTextOutput(JSON.stringify({ status: 'ok' })).setMimeType(ContentService.MimeType.JSON);
+    }
+
+    return ContentService.createTextOutput(JSON.stringify({ status: 'error', message: 'Unknown action' })).setMimeType(ContentService.MimeType.JSON);
+  }
+  ═══════════════════════════════════════════════════════════════
+  -->
+
 </body>
 </html>
