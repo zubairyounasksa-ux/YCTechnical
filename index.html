@@ -1185,13 +1185,18 @@
   }
 
   async function sheetPost(action, payload) {
-    const url  = getWebAppUrl();
-    const res  = await fetch(url, {
-      method:  'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body:    JSON.stringify({ action, data: payload }),
+    const url = getWebAppUrl();
+    // Google Apps Script: send as URL-encoded to avoid CORS preflight block
+    const params = new URLSearchParams();
+    params.append('action', action);
+    params.append('data', JSON.stringify(payload));
+    const res = await fetch(url, {
+      method: 'POST',
+      body: params,
     });
-    const json = await res.json();
+    const text = await res.text();
+    let json;
+    try { json = JSON.parse(text); } catch(e) { throw new Error('Invalid Sheet response: ' + text.slice(0, 120)); }
     if (json.status !== 'ok') throw new Error(json.message || 'Sheet POST failed');
     return json;
   }
